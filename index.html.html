@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#1e2d4a">
+<meta name="description" content="실버 세대가 직접 기획한 국내외 캠핑·트레킹 여행 기록소">
+<title>실버의 캠핑여행</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;900&family=Noto+Sans+KR:wght@300;400;500;700&family=Shippori+Mincho+B1:wght@600;800&display=swap" rel="stylesheet">
+<style>
+/* 모바일 터치 최적화 */
+*{-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;}
+a,button{touch-action:manipulation;}
+img{max-width:100%;height:auto;}
+:root{--ink:#16110a;--cream:#f8f3ea;--parchment:#ede3cc;--gold:#b8860b;--gold-lt:#d4a820;--rust:#8b3a2a;--navy:#1e2d4a;--moss:#3a5228;--amber:#c07820;--teal:#1a5c5a;--purple:#5a3478;--crimson:#7a1a28;--white:#fdfaf4;--gray:#7a6a55;--gray-lt:#b8a890;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}button{cursor:pointer;border:none;background:none;font-family:inherit;}
+.hero{position:relative;min-height:330px;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;background:var(--navy);}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(155deg,rgba(20,35,65,.93),rgba(20,35,65,.78)),url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1400&q=75') center/cover;z-index:0;}
+.hero-bar{position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--rust),var(--moss),var(--teal),var(--purple));z-index:2;}
+.hero-content{position:relative;z-index:1;text-align:center;padding:48px 24px 56px;}
+.hero-eye{display:inline-flex;align-items:center;gap:10px;font-size:.63rem;letter-spacing:.45em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:14px;}
+.hero-eye::before,.hero-eye::after{content:'';display:block;width:20px;height:1px;background:var(--gold-lt);}
+.hero-title{font-family:'Noto Serif KR',serif;font-size:clamp(2.4rem,6vw,4.6rem);font-weight:900;color:#fff;letter-spacing:.04em;line-height:1.1;text-shadow:0 4px 28px rgba(0,0,0,.45);margin-bottom:6px;}
+.hero-sub{font-family:'Shippori Mincho B1',serif;font-size:clamp(.8rem,1.8vw,1rem);color:rgba(255,255,255,.4);letter-spacing:.32em;margin-bottom:16px;}
+.hero-desc{font-size:.83rem;color:rgba(255,255,255,.58);letter-spacing:.05em;line-height:1.95;max-width:460px;margin:0 auto 24px;}
+.hero-stats{display:flex;border:1px solid rgba(255,255,255,.13);border-radius:4px;overflow:hidden;max-width:480px;margin:0 auto;}
+.hstat{flex:1;padding:12px 12px;text-align:center;border-right:1px solid rgba(255,255,255,.1);}
+.hstat:last-child{border-right:none;}
+.hstat-n{display:block;font-family:'Noto Serif KR',serif;font-size:1.4rem;font-weight:900;color:var(--gold-lt);line-height:1;}
+.hstat-l{display:block;font-size:.58rem;color:rgba(255,255,255,.48);margin-top:3px;letter-spacing:.05em;}
+.sec-lbl{max-width:1240px;margin:0 auto;padding:44px 28px 12px;display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.sec-lbl h2{font-family:'Noto Serif KR',serif;font-size:clamp(1.1rem,2vw,1.6rem);font-weight:900;color:var(--ink);}
+.sec-lbl h2 em{font-style:normal;color:var(--gold);display:block;font-size:.58em;letter-spacing:.3em;text-transform:uppercase;font-weight:500;font-family:'Noto Sans KR',sans-serif;margin-bottom:3px;}
+.sec-lbl p{font-size:.78rem;color:var(--gray);line-height:1.7;max-width:340px;}
+.g2{max-width:1240px;margin:0 auto;padding:12px 28px 48px;display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.g3{max-width:1240px;margin:0 auto;padding:12px 28px 48px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.tc{background:var(--white);border-radius:6px;overflow:hidden;border:1px solid var(--parchment);box-shadow:0 2px 10px rgba(24,18,10,.05);transition:box-shadow .3s,transform .3s;position:relative;}
+.tc:hover{box-shadow:0 8px 28px rgba(24,18,10,.11);transform:translateY(-2px);}
+.tc::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;}
+.cj::before{background:linear-gradient(90deg,var(--gold),var(--amber));}
+.ch2::before{background:linear-gradient(90deg,var(--navy),var(--rust));}
+.cm2::before{background:linear-gradient(90deg,var(--moss),var(--teal));}
+.cw::before{background:linear-gradient(90deg,var(--teal),var(--navy));}
+.cus::before{background:linear-gradient(90deg,#b22222,#1a3a6a);}
+.cao::before{background:linear-gradient(90deg,var(--navy),var(--teal));}
+.cosk::before{background:linear-gradient(90deg,#c0392b,#e67e22);}
+.cfuk::before{background:linear-gradient(90deg,#1a5276,#117a65);}
+.cfuji::before{background:linear-gradient(90deg,#4a4e8a,#c0392b);}
+.cshiz::before{background:linear-gradient(90deg,#1a7a4a,#2980b9);}
+.ctate::before{background:linear-gradient(90deg,#0f172a,#3b82f6);}
+.cme::before{background:linear-gradient(90deg,var(--purple),var(--teal));}
+.ck::before{background:linear-gradient(90deg,var(--crimson),var(--amber));}
+.can::before{background:linear-gradient(90deg,#3a6080,var(--moss));}
+.cf::before{background:linear-gradient(90deg,var(--moss),var(--gold));}
+.ch3{padding:20px 20px 0;cursor:pointer;user-select:none;}
+.chi{display:flex;align-items:flex-start;gap:12px;}
+.ci2{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0;}
+.ij{background:#fef3dc;}.ih{background:#e4eaf5;}.im{background:#e4f0ee;}.iw{background:#e4eef5;}
+.ius{background:#f0e8e4;}.iao{background:#e4eaf5;}.ime{background:#ece4f5;}.ik{background:#f5e4e4;}.ia{background:#e4eef5;}.if{background:#e8f0e4;}
+.cm3{flex:1;}
+.cs2{display:inline-block;font-size:.57rem;letter-spacing:.18em;text-transform:uppercase;padding:2px 8px;border-radius:20px;margin-bottom:6px;font-weight:500;}
+.sd{background:#e8f0e4;color:#3a5c2a;}.sc{background:#e4eaf5;color:#2c3557;}.sp{background:#f5f0e4;color:#7a5c2a;}.sa{background:#fde8e4;color:#8b3a2a;}.sr{background:#ece4f5;color:#5a3478;}
+.ct2{font-family:'Noto Serif KR',serif;font-size:1rem;font-weight:900;color:var(--ink);line-height:1.3;margin-bottom:3px;}
+.csb{font-size:.7rem;color:var(--gray);line-height:1.6;}
+.ctg{margin-left:auto;flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--cream);border:1.5px solid var(--parchment);display:flex;align-items:center;justify-content:center;font-size:.88rem;color:var(--gray);transition:all .3s;margin-top:6px;}
+.tc.open .ctg{background:var(--navy);border-color:var(--navy);color:#fff;transform:rotate(45deg);}
+.cdv{margin:16px 20px 0;border:none;border-top:1px solid var(--parchment);}
+.ctr{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.4,0,.2,1);}
+.tc.open .ctr{max-height:2200px;}
+.tri{padding:12px 20px 20px;}
+.br{margin-bottom:3px;}
+.bl2{display:flex;align-items:center;gap:8px;padding:8px 9px;border-radius:4px;cursor:pointer;user-select:none;transition:background .15s;}
+.bl2:hover,.br.open .bl2{background:var(--cream);}
+.bi2{width:25px;height:25px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:.78rem;flex-shrink:0;}
+.bc2{background:#e8f0e4;}.bh{background:#e4eaf5;}.bs{background:#f0e8f5;}.bf2{background:#fef3dc;}.bt2{background:#f5ede4;}.bn2{background:#e4f0f0;}
+.bnm{font-weight:700;font-size:.8rem;color:var(--ink);flex:1;}
+.bct{font-size:.62rem;color:var(--gray-lt);background:var(--cream);padding:2px 7px;border-radius:20px;}
+/* 브랜치 항목 헤더 */
+.bl2{display:flex;align-items:center;gap:8px;padding:10px 10px 8px;border-radius:4px;background:var(--cream);border-bottom:1px solid var(--parchment);margin-bottom:6px;}
+.ba2{display:none;}
+/* 리프(항목) - 항상 펼쳐진 상태 */
+.blv{max-height:none;overflow:visible;margin-left:33px;display:block;}
+/* 브랜치 간격 */
+.br{margin-bottom:14px;border:1px solid var(--parchment);border-radius:6px;overflow:hidden;background:var(--white);}
+.br .bl2{margin-bottom:0;border-radius:0;}
+.lf{display:flex;align-items:flex-start;position:relative;}
+.lf::before{content:'';position:absolute;left:-12px;top:0;bottom:0;width:1px;background:var(--parchment);}
+.lf::after{content:'';position:absolute;left:-12px;top:18px;width:10px;height:1px;background:var(--parchment);}
+.ll2{display:flex;align-items:flex-start;gap:8px;padding:8px 10px;border-radius:4px;width:100%;transition:background .15s;margin:1px 0;border-bottom:1px solid rgba(237,227,204,.5);}
+.ll2:last-child{border-bottom:none;}
+.ll2:hover{background:var(--cream);}
+.ld2{width:7px;height:7px;border-radius:50%;background:var(--gold);border:none;flex-shrink:0;margin-top:6px;}
+.ll2:hover .ld2{background:var(--rust);}
+.lc2{flex:1;}
+.lt2{font-size:.8rem;font-weight:600;color:var(--ink);line-height:1.4;}
+.lm2{font-size:.7rem;color:var(--gray-lt);margin-top:2px;line-height:1.5;}
+.lb2{font-size:.6rem;padding:3px 8px;border-radius:20px;margin-left:auto;flex-shrink:0;margin-top:1px;white-space:nowrap;align-self:flex-start;}
+.lk{background:#e4eaf5;color:var(--navy);}.ldo{background:#e8f0e4;color:var(--moss);}.ln{background:#fde8e4;color:var(--rust);}.lp{background:#f5f0e4;color:#7a5c2a;}.lr{background:#ece4f5;color:var(--purple);}
+.cft{padding:0 20px 14px;display:flex;gap:5px;flex-wrap:wrap;}
+.cft span{font-size:.6rem;padding:3px 8px;border-radius:20px;background:var(--cream);color:var(--gray);border:1px solid var(--parchment);}
+.qbar{background:var(--navy);padding:24px 0;}
+.qbi{max-width:1240px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:repeat(6,1fr);gap:2px;}
+.qb{display:flex;flex-direction:column;align-items:center;gap:5px;padding:14px 6px;background:rgba(255,255,255,.04);border-radius:3px;transition:background .2s;}
+.qb:hover{background:rgba(255,255,255,.11);}
+.qi2{font-size:1.35rem;}
+.ql2{font-size:.62rem;color:rgba(255,255,255,.62);letter-spacing:.04em;text-align:center;line-height:1.4;}
+footer{background:var(--ink);color:rgba(255,255,255,.45);padding:34px 28px 20px;text-align:center;}
+.flo{font-family:'Noto Serif KR',serif;font-size:1rem;color:#fff;font-weight:900;margin-bottom:7px;}
+footer p{font-size:.7rem;line-height:1.85;}
+.flk{display:flex;gap:16px;justify-content:center;margin-top:9px;flex-wrap:wrap;}
+.flk a{font-size:.68rem;color:var(--gold-lt);transition:color .2s;}
+.flk a:hover{color:#fff;}
+.fhr{border:none;border-top:1px solid rgba(255,255,255,.07);margin:18px auto;max-width:500px;}
+/* ══ MONETIZATION ══ */
+/* CTA 상단 버튼 */
+.cta-top{margin:14px 20px 0;display:flex;flex-direction:column;gap:7px;}
+.cta-btn{display:flex;align-items:center;justify-content:center;gap:7px;font-size:.76rem;font-weight:700;padding:10px 14px;border-radius:4px;letter-spacing:.04em;transition:all .2s;cursor:pointer;}
+.cta-pri{background:var(--gold);color:#fff;}
+.cta-pri:hover{background:var(--amber);color:#fff;}
+.cta-sec{background:var(--cream);color:var(--navy);border:1.5px solid var(--parchment);}
+.cta-sec:hover{background:var(--navy);color:#fff;border-color:var(--navy);}
+.cta-note{font-size:.62rem;color:var(--gray-lt);text-align:center;margin-top:2px;letter-spacing:.04em;}
+/* 수익 배지 */
+.rev-badge{display:inline-block;font-size:.55rem;background:#e8f5e9;color:#2e7d32;padding:2px 6px;border-radius:10px;margin-left:4px;vertical-align:middle;font-weight:700;}
+/* 장비 추천 박스 */
+.gear-box{margin:0 20px 16px;padding:14px 16px;background:#fffbf0;border:1.5px solid #f0d080;border-radius:4px;}
+.gear-ttl{font-size:.78rem;font-weight:700;color:var(--ink);margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+.gear-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;}
+.gear-item{display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 4px;background:#fff;border:1px solid var(--parchment);border-radius:4px;font-size:.68rem;color:var(--gray);transition:all .2s;text-align:center;}
+.gear-item:hover{border-color:var(--gold);color:var(--navy);}
+.gear-item .gi{font-size:1.2rem;}
+/* 수익 섹션 배너 */
+.rev-banner{max-width:1240px;margin:0 auto;padding:0 28px 20px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
+.rb-card{display:flex;align-items:center;gap:14px;padding:18px 20px;border-radius:6px;border:1px solid var(--parchment);background:var(--white);transition:all .22s;}
+.rb-card:hover{box-shadow:0 6px 24px rgba(24,18,10,.1);transform:translateY(-2px);}
+.rb-icon{font-size:1.8rem;flex-shrink:0;}
+.rb-body{}
+.rb-ttl{font-family:'Noto Serif KR',serif;font-size:.88rem;font-weight:700;color:var(--ink);margin-bottom:3px;}
+.rb-desc{font-size:.7rem;color:var(--gray);line-height:1.6;}
+.rb-cta{display:inline-block;margin-top:8px;font-size:.7rem;font-weight:700;padding:5px 12px;border-radius:20px;background:var(--gold);color:#fff;transition:background .2s;}
+.rb-cta:hover{background:var(--rust);}
+/* 구독 섹션 */
+.subscribe-sec{background:var(--navy);padding:52px 28px;text-align:center;}
+.sub-ttl{font-family:'Noto Serif KR',serif;font-size:clamp(1.2rem,2.5vw,1.8rem);font-weight:900;color:#fff;margin-bottom:8px;}
+.sub-desc{font-size:.82rem;color:rgba(255,255,255,.6);line-height:1.8;margin-bottom:24px;max-width:440px;margin-left:auto;margin-right:auto;}
+.sub-perks{display:flex;justify-content:center;gap:24px;margin-bottom:28px;flex-wrap:wrap;}
+.sub-perk{font-size:.75rem;color:rgba(255,255,255,.75);display:flex;align-items:center;gap:6px;}
+.sub-perk::before{content:'✓';color:var(--gold-lt);font-weight:700;}
+.sub-form{display:flex;gap:0;max-width:440px;margin:0 auto;border-radius:4px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.3);}
+.sub-input{flex:1;padding:13px 18px;font-size:.85rem;border:none;outline:none;font-family:'Noto Sans KR',sans-serif;}
+.sub-btn{padding:13px 22px;background:var(--gold);color:#fff;border:none;font-size:.82rem;font-weight:700;cursor:pointer;white-space:nowrap;transition:background .2s;font-family:'Noto Sans KR',sans-serif;}
+.sub-btn:hover{background:var(--amber);}
+.sub-note{font-size:.65rem;color:rgba(255,255,255,.35);margin-top:12px;}
+/* Quick bar 업그레이드 */
+.qbi{grid-template-columns:repeat(8,1fr)!important;}
+.qb-hot{position:relative;}
+.qb-hot::after{content:'💰';position:absolute;top:6px;right:8px;font-size:.65rem;}
+/* PDF 팝업 힌트 */
+.pdf-pill{display:inline-flex;align-items:center;gap:6px;background:var(--gold);border:none;color:#fff;font-size:.72rem;font-weight:700;padding:6px 14px;border-radius:20px;margin-top:8px;letter-spacing:.04em;box-shadow:0 2px 8px rgba(184,134,11,.35);}
+.cj .pdf-pill   {background:var(--gold);}
+.ch2 .pdf-pill  {background:var(--navy);}
+.cao .pdf-pill  {background:var(--teal);}
+.cosk .pdf-pill {background:#c0392b;}
+.cfuk .pdf-pill {background:#117a65;}
+.cfuji .pdf-pill{background:#4a4e8a;}
+.cshiz .pdf-pill{background:#1a7a4a;}
+.ctate .pdf-pill{background:#1e40af;}
+.cus .pdf-pill  {background:#b22222;}
+.cme .pdf-pill  {background:var(--purple);}
+.ck .pdf-pill   {background:var(--crimson);}
+.can .pdf-pill  {background:#3a6080;}
+@media(max-width:960px){.g2,.g3{grid-template-columns:1fr 1fr;padding:8px 16px 36px;}.rev-banner{grid-template-columns:1fr;}.gear-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:640px){.g2,.g3{grid-template-columns:1fr;}.sec-lbl{padding:32px 16px 10px;flex-direction:column;align-items:flex-start;}.qbi{grid-template-columns:repeat(4,1fr)!important;}.sub-form{flex-direction:column;}.sub-input,.sub-btn{border-radius:4px;}.rev-banner{grid-template-columns:1fr;padding:0 16px 16px;}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+<div class="hero-bg"></div><div class="hero-bar"></div>
+<div class="hero-content">
+<div class="hero-eye">Silver Camping Travel</div>
+<h1 class="hero-title">실버의 캠핑여행</h1>
+<p class="hero-sub">キャンプ旅行 · トレッキング · 원정 기록</p>
+<p class="hero-desc">렌터카 한 대, 텐트 하나, 오랜 친구들—<br>국내 캠핑부터 히말라야·티베트까지 실버 세대의 여행 기록</p>
+<div class="hero-stats">
+<div class="hstat"><span class="hstat-n">10</span><span class="hstat-l">여행 기록</span></div>
+<div class="hstat"><span class="hstat-n">6개국</span><span class="hstat-l">방문 국가</span></div>
+<div class="hstat"><span class="hstat-n">5,630m</span><span class="hstat-l">최고 고도</span></div>
+<div class="hstat"><span class="hstat-n">계속</span><span class="hstat-l">업데이트</span></div>
+</div>
+</div>
+</header>
+
+<!-- ■ 일본여행 -->
+<div class="sec-lbl"><h2><em>Japan Travel Plans</em>일본여행</h2><p>카드 클릭→트리 펼침 · 링크 클릭→현지 예약·지도 이동</p></div>
+<div class="g2">
+
+<div class="tc cj" id="c0"><div class="ch3" onclick="tog('c0')"><div class="chi"><div class="ci2 ij">🗾</div><div class="cm3"><span class="cs2 sd">✓ 완료</span><div class="ct2">60일간 일본여행 여정</div><div class="csb">렌터카 혼슈~홋카이도~규슈 · 8개 광역 · 40+ 캠핑장</div>
+<div class="pdf-pill">📍 루트 PDF 준비 중</div>
+</div><div class="ctg">＋</div></div></div>
+<div class="cta-top">
+  <a href="https://link.coupang.com/a/camping-gear" target="_blank" class="cta-btn cta-sec">🛒 실제 사용 캠핑 장비 전체 보기 <span class="rev-badge">쿠팡</span></a>
+  <a href="https://travel.rakuten.co.jp" target="_blank" class="cta-btn cta-sec">♨️ 일본 온천 료칸 특가 예약 <span class="rev-badge">라쿠텐</span></a>
+</div>
+<div class="cta-note">※ 위 링크는 제휴 링크입니다. 추가 비용 없이 여행 정보 운영에 도움이 됩니다.</div>
+<hr class="cdv">
+<div class="ctr"><div class="tri">
+<div class="br" id="b00"><div class="bl2" onclick="togB('b00')"><div class="bi2 bc2">⛺</div><span class="bnm">야영지 · 캠핑장</span><span class="bct">40+</span><span class="ba2">▶</span></div><div class="blv">
+<div class="lf"><a class="ll2" href="https://www.nap-camp.com" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">아키요시다이 국립공원 캠핑장</div><div class="lm2">야마구치현 · Day 1–3 · 카르스트 대지 야영</div></div><span class="lb2 lk">なっぷ</span></a></div>
+<div class="lf"><a class="ll2" href="https://www.biei-hokkaido.jp" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">비에이 白金 오토캠프장</div><div class="lm2">홋카이도 · Day 31–33 · 청의 호수 인근 · 6–9월 개장</div></div><span class="lb2 lk">공식</span></a></div>
+<div class="lf"><a class="ll2" href="https://www.kamikochi.or.jp" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">가미코치 캠프장</div><div class="lm2">나가노현 · Day 44–46 · 마이카 금지→셔틀</div></div><span class="lb2 lk">공식</span></a></div>
+<div class="lf"><a class="ll2" href="https://www.nap-camp.com" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">구주코겐 오토캠프장</div><div class="lm2">오이타현 · Day 57–58 · 규슈 고원</div></div><span class="lb2 lk">なっぷ</span></a></div>
+</div></div>
+<div class="br" id="b01"><div class="bl2" onclick="togB('b01')"><div class="bi2 bh">♨️</div><span class="bnm">온천 료칸 정비</span><span class="bct">8회</span><span class="ba2">▶</span></div><div class="blv">
+<div class="lf"><a class="ll2" href="https://www.ikyu.com" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">유다 온센 마쓰다야 료칸</div><div class="lm2">야마구치시 · Day 7 1주 정비 · 2식 포함</div></div><span class="lb2 lk">잇큐</span></a></div>
+<div class="lf"><a class="ll2" href="https://www.jalan.net" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">노보리베츠 다이이치 타키모토칸</div><div class="lm2">홋카이도 · Day 38–39 · 9종 온천수</div></div><span class="lb2 lk">자란넷</span></a></div>
+<div class="lf"><a class="ll2" href="https://travel.rakuten.co.jp" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">벳푸 간나와 온센 료칸</div><div class="lm2">오이타현 · Day 56 7주 정비</div></div><span class="lb2 lk">라쿠텐</span></a></div>
+</div></div>
+<div class="br" id="b02"><div class="bl2" onclick="togB('b02')"><div class="bi2 bs">🏞️</div><span class="bnm">연계 명소</span><span class="bct">30+</span><span class="ba2">▶</span></div><div class="blv">
+<div class="lf"><a class="ll2" href="https://www.biei-hokkaido.jp" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">비에이 청의 호수</div><div class="lm2">홋카이도 · 코발트블루 화산호</div></div><span class="lb2 lk">공식</span></a></div>
+<div class="lf"><a class="ll2" href="https://www.shirakawa-go.gr.jp" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">시라카와고 합장촌</div><div class="lm2">기후현 · 유네스코 세계유산</div></div><span class="lb2 lk">공식</span></a></div>
+<div class="lf"><a class="ll2" href="https://www.hitachikaihin.jp" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">히타치 해변 네모필라</div><div class="lm2">이바라키현 · 450만 그루 꽃밭</div></div><span class="lb2 lk">공식</span></a></div>
+</div></div>
+<div class="br" id="b03"><div class="bl2" onclick="togB('b03')"><div class="bi2 bf2">🍜</div><span class="bnm">지역 맛집</span><span class="bct">지역별</span><span class="ba2">▶</span></div><div class="blv">
+<div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=하카타+라멘+나카스+포장마차" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">후쿠오카 하카타 라멘 · 나카스 포장마차</div><div class="lm2">돈코츠 · 야간 포장마차 필수</div></div><span class="lb2 lk">지도</span></a></div>
+<div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=삿포로+징기스칸+다루마" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">홋카이도 징기스칸 · 삿포로 다루마</div><div class="lm2">양고기 구이 · 웨이팅 필수</div></div><span class="lb2 lk">지도</span></a></div>
+<div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=오비히로+부타동" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">오비히로 부타동 (돼지 덮밥)</div><div class="lm2">도카치 명물 · 달콤 간장 소스</div></div><span class="lb2 lk">지도</span></a></div>
+</div></div>
+<div class="br" id="b04"><div class="bl2" onclick="togB('b04')"><div class="bi2 bt2">🚗</div><span class="bnm">교통편</span><span class="bct">링크</span><span class="ba2">▶</span></div><div class="blv">
+<div class="lf"><a class="ll2" href="https://www.timescar-rental.com" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">Times Car Rental</div><div class="lm2">공항 인수·반납 · ETC카드 · 보험</div></div><span class="lb2 lk">예약</span></a></div>
+<div class="lf"><a class="ll2" href="https://www.e-nexco.co.jp" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">NEXCO 고속요금 계산</div><div class="lm2">ETC 할인 포함</div></div><span class="lb2 lk">계산기</span></a></div>
+<div class="lf"><a class="ll2" href="https://gogo.gs" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">GoGo.gs 주유소 지도</div><div class="lm2">전국 주유소 가격 실시간</div></div><span class="lb2 lk">지도</span></a></div>
+</div></div>
+</div></div>
+<div class="cft"><span>🗓️ 60일</span><span>🚗 렌터카</span><span>⛺ 오토캠프</span><span>♨️ 온천 8회</span></div>
+<div class="gear-box">
+  <div class="gear-ttl">🔥 60일 여행에서 실제 사용한 장비</div>
+  <div class="gear-grid">
+    <a class="gear-item" href="https://link.coupang.com/a/lantern" target="_blank"><div class="gi">🔦</div>LED 랜턴</a>
+    <a class="gear-item" href="https://link.coupang.com/a/tent" target="_blank"><div class="gi">⛺</div>텐트</a>
+    <a class="gear-item" href="https://link.coupang.com/a/table" target="_blank"><div class="gi">🪑</div>경량 테이블</a>
+    <a class="gear-item" href="https://link.coupang.com/a/burner" target="_blank"><div class="gi">🔥</div>버너 세트</a>
+    <a class="gear-item" href="https://link.coupang.com/a/sleepbag" target="_blank"><div class="gi">🛌</div>침낭</a>
+    <a class="gear-item" href="https://link.coupang.com/a/allgear" target="_blank"><div class="gi">🛒</div>전체 보기</a>
+  </div>
+</div>
+</div>
+
+<div class="tc ch2" id="c1"><div class="ch3" onclick="tog('c1')"><div class="chi"><div class="ci2 ih">🏔️</div><div class="cm3"><span class="cs2 sc">🤖 Claude 기획</span><div class="ct2">홋카이도 캠핑투어</div><div class="csb">성남고 동창 8인 · 13박 14일 · 렌터카 2대 · 5/20–6/2</div>
+<div class="pdf-pill">📋 홋카이도 14일 루트 PDF 준비 중</div>
+</div><div class="ctg">＋</div></div></div>
+<div class="cta-top">
+  <a href="https://link.coupang.com/a/camping-gear" target="_blank" class="cta-btn cta-sec">🛒 홋카이도 캠핑 추천 장비 보기 <span class="rev-badge">쿠팡</span></a>
+  <a href="https://www.jalan.net" target="_blank" class="cta-btn cta-sec">🏨 홋카이도 호텔 특가 예약 <span class="rev-badge">자란넷</span></a>
+</div>
+<div class="cta-note">※ 위 링크는 제휴 링크입니다. 추가 비용 없이 여행 정보 운영에 도움이 됩니다.</div>
+<hr class="cdv">
+<div class="ctr"><div class="tri">
+<div class="br" id="b10"><div class="bl2" onclick="togB('b10')"><div class="bi2 bc2">⛺</div><span class="bnm">야영지</span><span class="bct">3곳 확정</span><span class="ba2">▶</span></div><div class="blv">
+<div class="lf"><a class="ll2" href="https://www.nap-camp.com" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">Yobitoura 캠핑장</div><div class="lm2">05/22–24 · 2박</div></div><span class="lb2 ldo">완료</span></a></div>
+<div class="lf"><a class="ll2" href="https://www.nap-camp.com" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">RECAMP 와코토</div><div class="lm2">05/24–27 · 3박 · NAPRSV-11390209</div></div><span class="lb2 ldo">완료</span></a></div>
+<div class="lf"><a class="ll2" href="https://www.env.go.jp" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">Cape Kiritappu 텐트 야영</div><div class="lm2">05/29–31 · 무료 현장 신청</div></div><span class="lb2 ldo">무료</span></a></div>
+</div></div>
+<div class="br" id="b11"><div class="bl2" onclick="togB('b11')"><div class="bi2 bh">🏨</div><span class="bnm">호텔 예약</span><span class="bct">3개 완료</span><span class="ba2">▶</span></div><div class="blv">
+<div class="lf"><a class="ll2" href="https://www.jalan.net" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">HOTEL BOTH 시레토코</div><div class="lm2">05/27–29 · 예약 60894595020</div></div><span class="lb2 ldo">완료</span></a></div>
+<div class="lf"><a class="ll2" href="https://www.jalan.net" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">Smile Hotel 구시로</div><div class="lm2">05/31 · 예약 1702491108</div></div><span class="lb2 ldo">완료</span></a></div>
+<div class="lf"><a class="ll2" href="https://www.jalan.net" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">Richmond Hotel 오비히로</div><div class="lm2">06/01 · 예약 1704122727</div></div><span class="lb2 ldo">완료</span></a></div>
+</div></div>
+<div class="br" id="b12"><div class="bl2" onclick="togB('b12')"><div class="bi2 bs">🏞️</div><span class="bnm">연계 명소</span><span class="bct">5곳</span><span class="ba2">▶</span></div><div class="blv">
+<div class="lf"><a class="ll2" href="https://www.biei-hokkaido.jp" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">비에이 청의 호수 · 패치워크 구릉</div><div class="lm2">코발트블루 화산호</div></div><span class="lb2 lk">공식</span></a></div>
+<div class="lf"><a class="ll2" href="https://www.shiretoko.or.jp" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">시레토코 반도 세계자연유산</div><div class="lm2">원시림 보트 투어</div></div><span class="lb2 lk">공식</span></a></div>
+<div class="lf"><a class="ll2" href="https://www.noboribetsu-spa.jp" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">노보리베츠 지고쿠다니</div><div class="lm2">유황 지옥 계곡 · 9종 온천</div></div><span class="lb2 lk">공식</span></a></div>
+</div></div>
+<div class="br" id="b13"><div class="bl2" onclick="togB('b13')"><div class="bi2 bf2">🍣</div><span class="bnm">홋카이도 맛집</span><span class="bct">추천</span><span class="ba2">▶</span></div><div class="blv">
+<div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=Super+Fukuhara+Teshikaga" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">수퍼 후쿠하라 (테시카가)</div><div class="lm2">Day 6 · 키리탑 식재료 · 이광휘 담당</div></div><span class="lb2 lk">지도</span></a></div>
+<div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=삿포로+징기스칸+다루마" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">삿포로 다루마 징기스칸</div><div class="lm2">양고기 구이 명가</div></div><span class="lb2 lk">지도</span></a></div>
+<div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=오비히로+부타동+판초" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">오비히로 부타동 (판초 본점)</div><div class="lm2">도카치 명물</div></div><span class="lb2 lk">지도</span></a></div>
+</div></div>
+<div class="br" id="b14"><div class="bl2" onclick="togB('b14')"><div class="bi2 bt2">🚐</div><span class="bnm">렌터카 2대</span><span class="bct">완료</span><span class="ba2">▶</span></div><div class="blv">
+<div class="lf"><a class="ll2" href="https://www.timescar-rental.com" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">1호차 Times W-1 미니밴</div><div class="lm2">예약 202600499980 · 반납 11:30</div></div><span class="lb2 ldo">완료</span></a></div>
+<div class="lf"><a class="ll2" href="https://www.timescar-rental.com" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">2호차 Times W-1 미니밴 (인경환 운전)</div><div class="lm2">예약 202600510061 · 반납 09:00</div></div><span class="lb2 ldo">완료</span></a></div>
+</div></div>
+</div></div>
+<div class="cft"><span>🏔️ 홋카이도</span><span>👥 8인</span><span>🚐 미니밴 2대</span><span>📅 5/20–6/2</span></div></div>
+
+<div class="tc cao" id="c5"><div class="ch3" onclick="tog('c5')"><div class="chi"><div class="ci2 iao">🏔️</div><div class="cm3"><span class="cs2 sr">📁 참고자료</span><div class="ct2">아오모리 여행</div><div class="csb">SN33 산악회 · 5박 6일 · 2026.03.20–25 · 핫코다산·도완다호·오이라세</div></div><div class="ctg">＋</div></div></div><hr class="cdv">
+<div class="ctr"><div class="tri">
+<div class="br" id="b50"><div class="bl2" onclick="togB('b50')"><div class="bi2 bh">🏨</div><span class="bnm">숙박 (3개 호텔)</span><span class="bct">5박</span><span class="ba2">▶</span></div><div class="blv">
+<div class="lf"><a class="ll2" href="https://www.jalan.net" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">도미인 히로사키 내추럴 핫 스프링</div><div class="lm2">1·2일차 연박 · 핫코다산 트레킹 베이스</div></div><span class="lb2 lr">참고</span></a></div>
+<div class="lf"><a class="ll2" href="https://www.jalan.net" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">호텔 포니 온센 (Hotel Pony Onsen)</div><div class="lm2">3·4일차 · 도완다 인근 · 온천 포함</div></div><span class="lb2 lr">참고</span></a></div>
+<div class="lf"><a class="ll2" href="https://www.jalan.net" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">선루트 아오모리 (Hotel Sunroute Aomori)</div><div class="lm2">5일차 · 귀국 전날</div></div><span class="lb2 lr">참고</span></a></div>
+</div></div>
+<div class="br" id="b51"><div class="bl2" onclick="togB('b51')"><div class="bi2 bs">🏔️</div><span class="bnm">트레킹 코스</span><span class="bct">3대 코스</span><span class="ba2">▶</span></div><div class="blv">
+<div class="lf"><a class="ll2" href="https://www.hakkoda-ropeway.jp" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">핫코다산 로프웨이 & 정상 트레킹</div><div class="lm2">2일차 · 왕복 ¥2,200 · 09:00–16:20</div></div><span class="lb2 lr">참고</span></a></div>
+<div class="lf"><a class="ll2" href="https://www.towada.jp" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">도완다호 트레킹</div><div class="lm2">3일차 · 유람선 토·일·공휴일 운항</div></div><span class="lb2 lr">참고</span></a></div>
+<div class="lf"><a class="ll2" href="https://www.oirase-kankou.jp" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">오이라세 계류 트레킹</div><div class="lm2">4일차 · 14km · 수십 개 폭포</div></div><span class="lb2 lr">참고</span></a></div>
+</div></div>
+<div class="br" id="b52"><div class="bl2" onclick="togB('b52')"><div class="bi2 bf2">🐟</div><span class="bnm">아오모리 맛집</span><span class="bct">추천</span><span class="ba2">▶</span></div><div class="blv">
+<div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=Yabukin+소바+히로사키" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">Yabukin(やぶきん) 소바 전문점</div><div class="lm2">히로사키 · ¥1,000 내외</div></div><span class="lb2 lr">참고</span></a></div>
+<div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=八食Center+하치노헤" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">하치노헤 八食Center 시치린무라</div><div class="lm2">가리비·왕게 직접 구워 먹기</div></div><span class="lb2 lr">참고</span></a></div>
+</div></div>
+</div></div>
+<div class="cft"><span>🏔️ 아오모리</span><span>SN33 산악회</span><span>5박 6일</span><span>📁 참고</span></div></div>
+
+<!-- ── 오사카 3박 4일 ── -->
+<div class="tc cosk" id="c-osaka">
+<div class="ch3" onclick="tog('c-osaka')"><div class="chi">
+<div class="ci2" style="background:#fde8e0;">🏯</div>
+<div class="cm3">
+  <span class="cs2 sa">📺 유튜브 기반 기획</span>
+  <div class="ct2">오사카 핵심 3박 4일</div>
+  <div class="csb">도톤보리·신세카이·USJ·가이유칸·아베노 야경 · 초행자 완전 정복</div>
+  <div class="pdf-pill">📍 오사카 초행자용 실전 가이드</div>
+</div>
+<div class="ctg">＋</div>
+</div></div>
+<div class="cta-top">
+  <a href="https://youtu.be/Gs0SAoXlj_E" target="_blank" class="cta-btn cta-sec">📺 오사카 여행 유튜브 원본 영상 보기</a>
+  <a href="https://link.coupang.com/a/japan-travel" target="_blank" class="cta-btn cta-sec">🛒 오사카 여행 필수 준비물 보기 <span class="rev-badge">쿠팡</span></a>
+</div>
+<div class="cta-note">※ 위 링크는 제휴 링크입니다. 추가 비용 없이 여행 정보 운영에 도움이 됩니다.</div>
+<hr class="cdv">
+<div class="ctr"><div class="tri">
+
+  <!-- 일정 -->
+  <div class="br" id="bos1"><div class="bl2" onclick="togB('bos1')"><div class="bi2 bn2">🗓️</div><span class="bnm">3박 4일 일정</span><span class="bct">일자별</span><span class="ba2">▶</span></div><div class="blv">
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">1일차 · 난바·도톤보리</div><div class="lm2">에비스바시·글리코상·호젠지 요코초 · 저녁: 타코야키·오코노미야키</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">2일차 · 신세카이 + 쿠로몬 시장 + 쇼핑</div><div class="lm2">신세카이 레트로 거리·쿠시카츠 → 쿠로몬 시장 → 텐진바시스지·아메리카무라</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">3일차 · 체험 선택 (A 또는 B)</div><div class="lm2">A: USJ 전일 (가족·커플 추천) / B: 가이유칸+아사히 맥주공장+오사카성 (성인 탐방형)</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">4일차 · 공원·전망대·마무리</div><div class="lm2">텐시바 공원 or 나카노시마 → 아베노 하루카스 야경 → 쓰루하시 코리아타운(재방문자 추천)</div></div></div></div>
+  </div></div>
+
+  <!-- 명소 -->
+  <div class="br" id="bos2"><div class="bl2" onclick="togB('bos2')"><div class="bi2 bs">🏯</div><span class="bnm">핵심 명소</span><span class="bct">지역별</span><span class="ba2">▶</span></div><div class="blv">
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=도톤보리+오사카" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">도톤보리 · 에비스바시 · 글리코상</div><div class="lm2">난바 · 오사카의 상징 거리 · 야경 포인트</div></div><span class="lb2 lk">지도</span></a></div>
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=호젠지요코초+오사카" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">호젠지 요코초</div><div class="lm2">돌바닥 골목 · 이자카야·선술집 · 레트로 감성</div></div><span class="lb2 lk">지도</span></a></div>
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=신세카이+오사카" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">신세카이 · 쓰텐카쿠 타워</div><div class="lm2">쇼와 레트로 거리 · 쿠시카츠 성지</div></div><span class="lb2 lk">지도</span></a></div>
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=오사카성" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">오사카성 · 텐시바 공원</div><div class="lm2">성곽 역사 투어 · 공원 산책 · 봄 벚꽃 명소</div></div><span class="lb2 lk">지도</span></a></div>
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=쓰루하시+코리아타운+오사카" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">쓰루하시 코리아타운</div><div class="lm2">재방문자 추천 · 한국 식재료·김치·먹거리 거리</div></div><span class="lb2 lk">지도</span></a></div>
+  </div></div>
+
+  <!-- 체험 -->
+  <div class="br" id="bos3"><div class="bl2" onclick="togB('bos3')"><div class="bi2 bs">🎢</div><span class="bnm">체험 · 입장권</span><span class="bct">비용 포함</span><span class="ba2">▶</span></div><div class="blv">
+    <div class="lf"><a class="ll2" href="https://www.usj.co.jp/web/ko/ko" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">유니버설 스튜디오 재팬 (USJ)</div><div class="lm2">가족·커플 3일차 추천 · 사전 예약 필수 · 익스프레스 패스 고려</div></div><span class="lb2 lk">공식</span></a></div>
+    <div class="lf"><a class="ll2" href="https://www.kaiyukan.com/language/kor.html" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">가이유칸 수족관</div><div class="lm2">입장료 약 2,300엔 · 세계 최대급 · 고래상어 전시</div></div><span class="lb2 lk">한국어</span></a></div>
+    <div class="lf"><a class="ll2" href="https://www.asahibeer.co.jp/brewery/suita/" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">아사히 맥주 공장 투어</div><div class="lm2">입장 약 1,000엔 · 사전 예약 · 시음 포함</div></div><span class="lb2 lk">공식</span></a></div>
+    <div class="lf"><a class="ll2" href="https://www.abenoharukas-300.jp/ko/" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">아베노 하루카스 전망대</div><div class="lm2">입장 약 1,500엔 · 300m · 야경 만족도 TOP · 우메다 공중정원보다 추천</div></div><span class="lb2 lk">한국어</span></a></div>
+  </div></div>
+
+  <!-- 맛집 -->
+  <div class="br" id="bos4"><div class="bl2" onclick="togB('bos4')"><div class="bi2 bf2">🍜</div><span class="bnm">오사카 먹거리</span><span class="bct">핵심 5가지</span><span class="ba2">▶</span></div><div class="blv">
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=타코야키+도톤보리+오사카" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">타코야키 🐙</div><div class="lm2">도톤보리 야타이 · 핫도그형 vs 소스형 비교</div></div><span class="lb2 lk">지도</span></a></div>
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=쿠시카츠+신세카이+오사카" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">쿠시카츠 🍢</div><div class="lm2">신세카이 성지 · 소스 이중 담금 금지 룰 주의</div></div><span class="lb2 lk">지도</span></a></div>
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=오코노미야키+오사카" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">오코노미야키 🥬</div><div class="lm2">오사카식(섞어 굽기) vs 히로시마식 차이 체험</div></div><span class="lb2 lk">지도</span></a></div>
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=쿠로몬시장+오사카" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">쿠로몬 시장 🦑</div><div class="lm2">오사카의 부엌 · 가격 다소 비쌀 수 있음 · 오전 방문 추천</div></div><span class="lb2 lk">지도</span></a></div>
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=라멘+오사카" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">라멘 🍜</div><div class="lm2">난바·우메다 지역 라멘 거리 · 딥한 돼지뼈 베이스</div></div><span class="lb2 lk">지도</span></a></div>
+  </div></div>
+
+  <!-- 숙박 -->
+  <div class="br" id="bos5"><div class="bl2" onclick="togB('bos5')"><div class="bi2 bh">🏨</div><span class="bnm">숙박 권역</span><span class="bct">위치별</span><span class="ba2">▶</span></div><div class="blv">
+    <div class="lf"><a class="ll2" href="https://www.ikyu.com" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">난바·도톤보리 권역 (1순위)</div><div class="lm2">먹거리·산책 최적 · 심야까지 편의성 최고</div></div><span class="lb2 lk">잇큐</span></a></div>
+    <div class="lf"><a class="ll2" href="https://www.jalan.net" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">우메다·신오사카 권역</div><div class="lm2">신칸센 이동 편리 · 공중정원 접근 용이</div></div><span class="lb2 lk">자란넷</span></a></div>
+    <div class="lf"><a class="ll2" href="https://travel.rakuten.co.jp" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">텐노지·아베노 권역</div><div class="lm2">하루카스 전망대 도보 · USJ 접근 편리</div></div><span class="lb2 lk">라쿠텐</span></a></div>
+  </div></div>
+
+  <!-- 교통 -->
+  <div class="br" id="bos6"><div class="bl2" onclick="togB('bos6')"><div class="bi2 bt2">🚇</div><span class="bnm">교통 · 이동 팁</span><span class="bct">실전</span><span class="ba2">▶</span></div><div class="blv">
+    <div class="lf"><a class="ll2" href="https://www.icoca.jp" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">ICOCA 교통카드</div><div class="lm2">오사카 지하철·JR·버스 전부 IC카드 터치 결제</div></div><span class="lb2 lk">공식</span></a></div>
+    <div class="lf"><a class="ll2" href="https://osaka-info.jp/ko/page/osaka-amazing-pass/" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">오사카 어메이징 패스</div><div class="lm2">1일/2일권 · 지하철 무제한+주요 관광지 무료</div></div><span class="lb2 lk">공식</span></a></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">💡 현지 팁</div><div class="lm2">"억지로 웨이팅 말고 흐름대로" — 쿠로몬은 비쌀 수 있음 · 아베노 하루카스가 우메다보다 만족도 높음</div></div></div></div>
+  </div></div>
+
+</div></div>
+<div class="cft"><span>🏯 오사카</span><span>3박 4일</span><span>초행자 완전정복</span><span>📺 유튜브 기반</span></div></div>
+
+<!-- ── 후쿠오카 2박 3일 ── -->
+<div class="tc cfuk" id="c-fukuoka">
+<div class="ch3" onclick="tog('c-fukuoka')"><div class="chi">
+<div class="ci2" style="background:#d6eaf8;">🐡</div>
+<div class="cm3">
+  <span class="cs2 sa">📺 유튜브 기반 기획</span>
+  <div class="ct2">후쿠오카 핵심 2박 3일</div>
+  <div class="csb">야타이·오호리공원·모모치해변·텐진쇼핑·근교 당일치기 · 짧고 편한 일본 브레이크</div>
+  <div class="pdf-pill">⭐ 추천 시즌: 11월–12월 · 공항 근접 최고 편의성</div>
+</div>
+<div class="ctg">＋</div>
+</div></div>
+<div class="cta-top">
+  <a href="https://link.coupang.com/a/fukuoka-travel" target="_blank" class="cta-btn cta-sec">🛒 후쿠오카 단기 여행 준비물 보기 <span class="rev-badge">쿠팡</span></a>
+  <a href="https://travel.rakuten.co.jp" target="_blank" class="cta-btn cta-sec">🏨 후쿠오카 호텔 특가 예약 <span class="rev-badge">라쿠텐</span></a>
+</div>
+<div class="cta-note">※ 위 링크는 제휴 링크입니다. 추가 비용 없이 여행 정보 운영에 도움이 됩니다.</div>
+<hr class="cdv">
+<div class="ctr"><div class="tri">
+
+  <!-- 일정 -->
+  <div class="br" id="bfk1"><div class="bl2" onclick="togB('bfk1')"><div class="bi2 bn2">🗓️</div><span class="bnm">2박 3일 일정</span><span class="bct">일자별</span><span class="ba2">▶</span></div><div class="blv">
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">1일차 · 도착 + 야타이 데뷔</div><div class="lm2">하카타/텐진 체크인 → 저녁: 나카스·니시나카스·텐진 야타이 또는 이자카야</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">2일차 · 시내 핵심 무난한 하루 루트</div><div class="lm2">오전 오호리 공원 산책 → 모모치 해변+후쿠오카 타워 → 텐진 쇼핑+캐널시티 → 밤 야타이</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">3일차 · 선택 (A 도시형 or B 근교형)</div><div class="lm2">A: 하카타·텐진 쇼핑 마무리 / B: 다자이후·야나가와·아이노시마 중 택 1</div></div></div></div>
+  </div></div>
+
+  <!-- 명소 -->
+  <div class="br" id="bfk2"><div class="bl2" onclick="togB('bfk2')"><div class="bi2 bs">🏞️</div><span class="bnm">핵심 명소</span><span class="bct">후쿠오카</span><span class="ba2">▶</span></div><div class="blv">
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=오호리공원+후쿠오카" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">오호리 공원</div><div class="lm2">호수 산책로 · 아침 조깅·커피 · 도심 녹지의 쉼터</div></div><span class="lb2 lk">지도</span></a></div>
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=모모치해변+후쿠오카타워" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">모모치 해변 + 후쿠오카 타워</div><div class="lm2">바다 전망 · 타워 전망대 · 석양 포인트</div></div><span class="lb2 lk">지도</span></a></div>
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=캐널시티+하카타" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">캐널시티 하카타</div><div class="lm2">쇼핑몰+분수 쇼 · 텐진 인근 · 라멘 스타디움</div></div><span class="lb2 lk">지도</span></a></div>
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=다자이후+후쿠오카" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">다자이후 (근교 당일)</div><div class="lm2">학문의 신 다자이후 텐만구 · 우메가에모치 · 하카타서 전철 40분</div></div><span class="lb2 lk">지도</span></a></div>
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=야나가와+후쿠오카" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">야나가와 (근교 당일)</div><div class="lm2">뱃놀이 운하 도시 · 뱀장어 요리 · 하카타서 50분</div></div><span class="lb2 lk">지도</span></a></div>
+  </div></div>
+
+  <!-- 먹거리 -->
+  <div class="br" id="bfk3"><div class="bl2" onclick="togB('bfk3')"><div class="bi2 bf2">🍜</div><span class="bnm">후쿠오카 먹거리</span><span class="bct">야타이 필수</span><span class="ba2">▶</span></div><div class="blv">
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=나카스+야타이+후쿠오카" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">야타이 (屋台) 포장마차 🏮</div><div class="lm2">나카스·니시나카스·텐진 · 저녁 7시 이후 오픈 · 후쿠오카 필수 경험</div></div><span class="lb2 lk">지도</span></a></div>
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=하카타라멘+후쿠오카" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">하카타 라멘 🍥</div><div class="lm2">진한 돈코츠 · 이치란·이치후도·신신 · 가늘고 쫄깃한 면</div></div><span class="lb2 lk">지도</span></a></div>
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=모츠나베+후쿠오카" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">모츠나베 (내장 전골) 🫕</div><div class="lm2">후쿠오카 명물 · 된장·간장 베이스 선택 · 1인당 약 2,000엔</div></div><span class="lb2 lk">지도</span></a></div>
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=이자카야+텐진+후쿠오카" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">이자카야 · 해산물 정식 🦑</div><div class="lm2">텐진·하카타 골목 이자카야 · 고마사바(참깨 고등어) 후쿠오카 한정</div></div><span class="lb2 lk">지도</span></a></div>
+  </div></div>
+
+  <!-- 숙박 -->
+  <div class="br" id="bfk4"><div class="bl2" onclick="togB('bfk4')"><div class="bi2 bh">🏨</div><span class="bnm">숙박 권역</span><span class="bct">위치 주의</span><span class="ba2">▶</span></div><div class="blv">
+    <div class="lf"><a class="ll2" href="https://www.jalan.net" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">하카타역 권역 (교통 최강)</div><div class="lm2">신칸센·JR·공항선 집결 · 다자이후·야나가와 근교 이동 편리</div></div><span class="lb2 lk">자란넷</span></a></div>
+    <div class="lf"><a class="ll2" href="https://travel.rakuten.co.jp" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">텐진 권역 (쇼핑·야타이 최강)</div><div class="lm2">지하상가 연결 · 야타이 도보 · 오호리공원 접근 편리</div></div><span class="lb2 lk">라쿠텐</span></a></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">⚠️ 주의: 호텔명에 "하카타" 있어도 위치가 멀 수 있음</div><div class="lm2">반드시 지도로 실제 위치 확인 후 예약할 것</div></div></div></div>
+  </div></div>
+
+  <!-- 교통 -->
+  <div class="br" id="bfk5"><div class="bl2" onclick="togB('bfk5')"><div class="bi2 bt2">✈️</div><span class="bnm">교통 · 여행 팁</span><span class="bct">실전</span><span class="ba2">▶</span></div><div class="blv">
+    <div class="lf"><a class="ll2" href="https://www.fukuoka-airport.jp/ko/" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">후쿠오카 공항 → 하카타역 지하철 5분</div><div class="lm2">일본 주요 도시 중 공항 접근성 1위 · 240엔</div></div><span class="lb2 lk">공식</span></a></div>
+    <div class="lf"><a class="ll2" href="https://www.nishitetsu.jp/ko" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">니시테츠 (텐진↔다자이후·야나가와)</div><div class="lm2">IC카드 터치 · 버스는 별도 IC카드 필요</div></div><span class="lb2 lk">공식</span></a></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">💡 현지 팁 — 추천 계절: 11월–12월 말</div><div class="lm2">여름은 무더위·우기·태풍 주의 / 후쿠오카는 "편하게 즐기는 도시" — 엄청난 랜드마크보다 일상 감성</div></div></div></div>
+  </div></div>
+
+</div></div>
+<div class="cft"><span>🐡 후쿠오카</span><span>2박 3일</span><span>야타이 필수</span><span>📺 유튜브 기반</span></div></div>
+
+<!-- ── 후지산 후모톳바라 백패킹 ── -->
+<div class="tc cfuji" id="c-fuji">
+<div class="ch3" onclick="tog('c-fuji')"><div class="chi">
+<div class="ci2" style="background:#ede8f5;">🗻</div>
+<div class="cm3">
+  <span class="cs2 sd">✓ 완료된 여행</span>
+  <div class="ct2">후지산 후모톳바라<br>백패킹 5박 6일</div>
+  <div class="csb">제주 출발 · 나리타 익스프레스+신칸센 · 후모톳바라 오토캠핑장 2박</div>
+  <div class="pdf-pill">🗻 후지산 뷰 캠핑 실전 가이드</div>
+</div>
+<div class="ctg">＋</div>
+</div></div>
+<div class="cta-top">
+  <a href="https://fumotoppara.net/" target="_blank" class="cta-btn cta-pri">🏕️ 후모톳바라 공식 홈페이지 예약</a>
+  <a href="https://link.coupang.com/a/backpacking" target="_blank" class="cta-btn cta-sec">🛒 백패킹 필수 장비 보기 <span class="rev-badge">쿠팡</span></a>
+</div>
+<div class="cta-note">※ 위 링크는 제휴 링크입니다. 추가 비용 없이 여행 정보 운영에 도움이 됩니다.</div>
+<hr class="cdv">
+<div class="ctr"><div class="tri">
+
+  <!-- 전체 일정 -->
+  <div class="br" id="bfj1"><div class="bl2" onclick="togB('bfj1')"><div class="bi2 bn2">🗓️</div><span class="bnm">5박 6일 전체 일정</span><span class="bct">제주 출발</span><span class="ba2">▶</span></div><div class="blv">
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">Day 1 · 제주 → 나리타 → 도쿄 → 신후지 → 후지노미야</div><div class="lm2">나리타 익스프레스(N'EX) → 도카이도 신칸센 → 신후지역 → 후지노미야 이동</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">Day 2 · 후지노미야역 → 후모톳바라 캠핑장 입성</div><div class="lm2">2번 승강장 S4 노선 버스 (07:50 / 12:40 / 15:40 하루 3회) → 캠핑장 세팅</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">Day 3 · 후모톳바라 캠핑 2일차</div><div class="lm2">후지산 뷰 자유 시간 · 사슴버거(1,700엔) · 매점 쇼핑 · 목욕탕 (주말 운영)</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">Day 4 · 후모톳바라 → 신후지 → 도쿄 신주쿠 이동</div><div class="lm2">복귀 버스 건너편 정거장 승차 (1,550엔 현금) → 신칸센 도쿄 복귀</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">Day 5 · 도쿄 도심 관광</div><div class="lm2">신주쿠 · 시부야 · 요요기 공원 · 하라주쿠 · 도보+지하철 이동</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">Day 6 · 신주쿠 → 나리타공항 → 제주 귀국</div><div class="lm2">N'EX 이용 나리타 이동 · QR 티켓 지참 필수</div></div></div></div>
+  </div></div>
+
+  <!-- 캠핑장 -->
+  <div class="br" id="bfj2"><div class="bl2" onclick="togB('bfj2')"><div class="bi2 bc2">⛺</div><span class="bnm">후모톳바라 캠핑장</span><span class="bct">필수 정보</span><span class="ba2">▶</span></div><div class="blv">
+    <div class="lf"><a class="ll2" href="https://fumotoppara.net/" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">후모톳바라 캠핑장 공식 예약</div><div class="lm2">사전 예약 필수 (당일 예약 불가) · 여권 불필요 · 사이트 선착순 자유석</div></div><span class="lb2 lk">공식</span></a></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">이용료 · 이용 시간</div><div class="lm2">1일 1인 1,000엔 · 이용 시간 08:00–17:00</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">목욕탕</div><div class="lm2">주로 주말 운영 · 이용 전 사전 메일 문의 권장</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">🛒 매점 판매 품목</div><div class="lm2">쓰레기봉투 · 이소가스(품절 주의) · 장작 · 주류 · 육류 · 기념품 · 사슴버거 세트 1,700엔</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2" style="color:#c0392b;"><div class="lt2">⚠️ 착화제는 판매 안 함!</div><div class="lm2">이소가스 품절 가능성 있음 → 출발 전 반드시 준비해서 가야 함</div></div></div></div>
+  </div></div>
+
+  <!-- 교통 -->
+  <div class="br" id="bfj3"><div class="bl2" onclick="togB('bfj3')"><div class="bi2 bt2">🚆</div><span class="bnm">교통편 · 요금</span><span class="bct">전 구간</span><span class="ba2">▶</span></div><div class="blv">
+    <div class="lf"><a class="ll2" href="https://www.eki-net.com/ko/jreast-train-reservation/Top/Index" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">나리타 익스프레스 N'EX</div><div class="lm2">왕복 1인 5,500엔 · QR코드 저장 필수 · 발권 시 총 4장 티켓 발권됨</div></div><span class="lb2 lk">예약</span></a></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">신칸센 (도쿄 ↔ 신후지)</div><div class="lm2">편도 약 6,000엔 · 왕복권 없음 · 후지산 보이는 좌석 지정 권장 · QR 개찰구 인식</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">버스 (후지노미야역 → 캠핑장)</div><div class="lm2">2번 승강장 S4 노선 · 07:50 / 12:40 / 15:40 (하루 3회) · 아사기리그린파크 정거장 하차</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">⚠️ 하차 주의: 아사기리코겐 다음 정거장</div><div class="lm2">아사기리그린파크(朝霧グリーンパーク) · Asagiri Kogen 다음 정거장임을 반드시 확인</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">복귀 버스 (캠핑장 → 후지노미야역)</div><div class="lm2">하차한 곳 건너편 정거장 승차 · S4 노선 · 1인 1,550엔 현금 지불 · 번호표 뽑고 전광판 금액 확인</div></div></div></div>
+  </div></div>
+
+  <!-- 명소 -->
+  <div class="br" id="bfj4"><div class="bl2" onclick="togB('bfj4')"><div class="bi2 bs">🗻</div><span class="bnm">후지산 주변 명소</span><span class="bct">도쿄 포함</span><span class="ba2">▶</span></div><div class="blv">
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=후모톳바라+캠핑장+후지산" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">후모톳바라 캠핑장 (Fumotoppara)</div><div class="lm2">후지산 정면 뷰 · 광활한 초원 야영장 · 일본 최고 캠핑장 중 하나</div></div><span class="lb2 lk">지도</span></a></div>
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=아사기리고원+후지노미야" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">아사기리 고원 (朝霧高原)</div><div class="lm2">후지산 서쪽 고원 · 드라이브 코스 · 목장·낙농 체험</div></div><span class="lb2 lk">지도</span></a></div>
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=신주쿠+도쿄" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">도쿄 신주쿠 · 시부야 · 하라주쿠 (Day 5)</div><div class="lm2">요요기 공원 산책 · 시부야 스크램블 교차로 · 다케시타 거리</div></div><span class="lb2 lk">지도</span></a></div>
+  </div></div>
+
+  <!-- 준비물 -->
+  <div class="br" id="bfj5"><div class="bl2" onclick="togB('bfj5')"><div class="bi2 bf2">🎒</div><span class="bnm">백패킹 준비물</span><span class="bct">필수 체크</span><span class="ba2">▶</span></div><div class="blv">
+    <div class="lf"><a class="ll2" href="https://link.coupang.com/a/backpacking" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">착화제 (매점 미판매 — 필수 지참!)</div><div class="lm2">라이터·성냥·착화제 반드시 출발 전 준비</div></div><span class="lb2 ln">필수</span></a></div>
+    <div class="lf"><a class="ll2" href="https://link.coupang.com/a/isogas" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">이소가스 (품절 주의 — 미리 준비)</div><div class="lm2">캠핑장 매점 판매하나 품절 가능 · 한국에서 준비 권장</div></div><span class="lb2 ln">주의</span></a></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">현금 준비 (버스 요금 현금만)</div><div class="lm2">복귀 버스 1,550엔 · 현금 결제 · 동전 포함 준비</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">방한 장비 (고원 야간 기온 주의)</div><div class="lm2">아사기리 고원 해발 800m+ · 여름에도 야간 기온 급강하 · 침낭·레이어링 필수</div></div></div></div>
+  </div></div>
+
+</div></div>
+<div class="cft"><span>🗻 후지산</span><span>백패킹 5박 6일</span><span>후모톳바라</span><span>✓ 완료</span></div></div>
+
+<!-- ── 시즈오카 4박 5일 가족여행 ── -->
+<div class="tc cshiz" id="c-shizuoka">
+<div class="ch3" onclick="tog('c-shizuoka')"><div class="chi">
+<div class="ci2" style="background:#e8f5e9;">🍵</div>
+<div class="cm3">
+  <span class="cs2 sd">✓ 완료된 여행</span>
+  <div class="ct2">시즈오카 4박 5일<br>가족여행</div>
+  <div class="csb">후지산 뷰 · 타누키 호수 · 사파리 파크 · 사와야카 함바그 · 녹차 문화 체험</div>
+  <div class="pdf-pill">👨‍👩‍👧 가족·커플 추천 · 1인 100–110만원 (쇼핑 제외)</div>
+</div>
+<div class="ctg">＋</div>
+</div></div>
+<div class="cta-top">
+  <a href="https://link.coupang.com/a/japan-family" target="_blank" class="cta-btn cta-sec">🛒 시즈오카 가족 여행 준비물 <span class="rev-badge">쿠팡</span></a>
+  <a href="https://travel.rakuten.co.jp" target="_blank" class="cta-btn cta-sec">🏨 시즈오카 호텔 특가 예약 <span class="rev-badge">라쿠텐</span></a>
+</div>
+<div class="cta-note">※ 위 링크는 제휴 링크입니다. 추가 비용 없이 여행 정보 운영에 도움이 됩니다.</div>
+<hr class="cdv">
+<div class="ctr"><div class="tri">
+
+  <!-- 일정 -->
+  <div class="br" id="bsz1"><div class="bl2" onclick="togB('bsz1')"><div class="bi2 bn2">🗓️</div><span class="bnm">4박 5일 상세 일정</span><span class="bct">일자별</span><span class="ba2">▶</span></div><div class="blv">
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">Day 1 · 시즈오카 도착 · 이자카야 저녁</div><div class="lm2">시즈오카 공항 → 공항버스 시내 이동 50분 → 역 주변 호텔 체크인 → 볏짚 요리+폴라로이드 이자카야</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">Day 2 · 니혼다이라 전망 + 시즈오카 쇼핑</div><div class="lm2">니혼다이라 호텔 통창 후지산 조망 → 유메테라스 전망대 녹차밭 → 이세탄 백화점 (게스트카드 5%+면세 10%) → 녹차 아이스크림 7단계·오뎅 거리</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">Day 3 · 후지노미야 · 타누키 호수 · 시라이토 폭포</div><div class="lm2">기차로 후지노미야 이동 (기차 안에서 후지산 조망) → 타누키 호수 편백나무 산책+컵라면 → 시라이토 폭포 → 후지큐 호텔 체크인</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">Day 4 · 후지 사파리 파크 · 사와야카 함바그 · 꿈의 대교</div><div class="lm2">렌트카로 사파리 파크 자차 투어 (맹수 근접) → 사와야카 함바그 점심 (외곽 지점 웨이팅 적음) → 후지산 꿈의 대교 (기상 확인 필수)</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">Day 5 · 세계유산 센터 · 장어 덮밥 · 귀국</div><div class="lm2">후지산 세계유산 센터 독특한 건물+전망대 → 현지 장어 덮밥 마지막 만찬 → 공항버스 → 시즈오카 공항 출발</div></div></div></div>
+  </div></div>
+
+  <!-- 명소 -->
+  <div class="br" id="bsz2"><div class="bl2" onclick="togB('bsz2')"><div class="bi2 bs">🏞️</div><span class="bnm">핵심 명소</span><span class="bct">추천 순위</span><span class="ba2">▶</span></div><div class="blv">
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=타누키호수+후지노미야" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">⭐ 1순위 · 타누키 호수 (田貫湖)</div><div class="lm2">편백나무 산책로 · 후지산 정면 뷰 · 컵라면 야외 취식 · 조용한 감성 포인트</div></div><span class="lb2 lk">지도</span></a></div>
+    <div class="lf"><a class="ll2" href="https://www.fujisafari.co.jp" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">⭐ 2순위 · 후지 사파리 파크</div><div class="lm2">자차(렌트카) 투어로 맹수 근접 체험 · 성인도 만족도 높음 · 아이 동반 최강 추천</div></div><span class="lb2 lk">공식</span></a></div>
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=니혼다이라+전망대+시즈오카" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">⭐ 3순위 · 니혼다이라 전망대 · 유메테라스</div><div class="lm2">니혼다이라 호텔 라운지 통창 후지산 뷰 · 셔틀버스 이용 · 녹차밭 파노라마</div></div><span class="lb2 lk">지도</span></a></div>
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=시라이토폭포+후지노미야" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">⭐ 4순위 · 시라이토 폭포 (白糸の滝)</div><div class="lm2">용암이 만든 넓은 폭포 · 세계유산 · 후지산 뷰와의 조화</div></div><span class="lb2 lk">지도</span></a></div>
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=후지산세계유산센터+후지노미야" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">후지산 세계유산 센터</div><div class="lm2">독특한 역삼각형 건물 디자인 · 전망대 뷰 · Day 5 마무리 코스</div></div><span class="lb2 lk">지도</span></a></div>
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=후지산+꿈의대교+시즈오카" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">후지산 꿈의 대교</div><div class="lm2">기상 상태 라이브 카메라 확인 필수 · 날씨에 따라 일정 조정</div></div><span class="lb2 lk">지도</span></a></div>
+  </div></div>
+
+  <!-- 맛집 -->
+  <div class="br" id="bsz3"><div class="bl2" onclick="togB('bsz3')"><div class="bi2 bf2">🍜</div><span class="bnm">시즈오카 맛집</span><span class="bct">필수 먹거리</span><span class="ba2">▶</span></div><div class="blv">
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=사와야카+함바그+후지" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">사와야카 함바그 🥩 (시즈오카 한정)</div><div class="lm2">겉바속촉 원형 함바그 · 후지역 인근 외곽 지점이 웨이팅 적음 · 시내 지점 웨이팅 1시간+</div></div><span class="lb2 lk">지도</span></a></div>
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=시즈오카+오뎅거리" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">시즈오카 오뎅 거리 🍢</div><div class="lm2">검은 다시마 베이스 · '끝집' 등 평판 좋은 가게 선택 추천 · 역 주변 골목</div></div><span class="lb2 lk">지도</span></a></div>
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=녹차+아이스크림+시즈오카" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">녹차 아이스크림 7단계 🍦</div><div class="lm2">농도 1–7단계 선택 가능 · 이즈 방면 도로변 매장 · 시즈오카 명물</div></div><span class="lb2 lk">지도</span></a></div>
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=장어덮밥+시즈오카+하마나코" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">장어 덮밥 (우나쥬) 🐟</div><div class="lm2">겉바속촉 일본식 장어 · Day 5 마지막 만찬 추천 · 하마나코 장어가 시즈오카 특산</div></div><span class="lb2 lk">지도</span></a></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">볏짚 요리 이자카야 (Day 1)</div><div class="lm2">가쓰오(가다랑어) 볏짚 훈연 · 폴라로이드 서비스 · 역 주변 친절한 분위기</div></div></div></div>
+  </div></div>
+
+  <!-- 쇼핑 -->
+  <div class="br" id="bsz4"><div class="bl2" onclick="togB('bsz4')"><div class="bi2 bs">🛍️</div><span class="bnm">쇼핑 · 혜택</span><span class="bct">면세 포함</span><span class="ba2">▶</span></div><div class="blv">
+    <div class="lf"><a class="ll2" href="https://www.isetan-mitsukoshi.com" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">이세탄 백화점 시즈오카점</div><div class="lm2">게스트 카드 5% 할인 + 면세 10% → 최대 15% 절약 · 입장 시 여권 제시</div></div><span class="lb2 lk">공식</span></a></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">시즈오카 미니패스 vs 개별 발권</div><div class="lm2">3일권보다 방문지 거리 먼저 계산 후 선택 · 외곽 명소 많으면 개별이 더 저렴할 수 있음</div></div></div></div>
+  </div></div>
+
+  <!-- 교통·숙박·경비 -->
+  <div class="br" id="bsz5"><div class="bl2" onclick="togB('bsz5')"><div class="bi2 bt2">🚗</div><span class="bnm">교통 · 숙박 · 경비</span><span class="bct">전체 정리</span><span class="ba2">▶</span></div><div class="blv">
+    <div class="lf"><a class="ll2" href="https://www.nipponrentacar.co.jp" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">렌트카 (Day 4 필수)</div><div class="lm2">보험+카시트 포함 1일 약 10만원 · 사파리 파크 자차 투어·꿈의 대교 이동에 필요</div></div><span class="lb2 lk">예약</span></a></div>
+    <div class="lf"><a class="ll2" href="https://www.jalan.net" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">숙박 · 역 주변 가성비 호텔</div><div class="lm2">시즈오카 시내 10만원대 / 후지큐 호텔 (Day 3 접근성 우수)</div></div><span class="lb2 lk">자란넷</span></a></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">💴 총 여행 경비</div><div class="lm2">성인 1인 약 100–110만원 (항공+숙박 포함 · 쇼핑 제외) · 렌트카 1일 10만원 별도</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">💡 후지산 뷰 팁</div><div class="lm2">후지산은 기상 변화 심함 → 라이브 카메라 수시 확인 후 동선 조정 권장</div></div></div></div>
+  </div></div>
+
+</div></div>
+<div class="cft"><span>🍵 시즈오카</span><span>4박 5일</span><span>가족·커플</span><span>후지산 뷰</span><span>✓ 완료</span></div></div>
+
+<!-- ── 다테야마 알펜루트 (16박17일 혼슈 중부 6편) ── -->
+<div class="tc ctate" id="c-tateyama">
+<div class="ch3" onclick="tog('c-tateyama')"><div class="chi">
+<div class="ci2" style="background:#e0e7ff;">🚠</div>
+<div class="cm3">
+  <span class="cs2 sd">✓ 완료된 여행</span>
+  <div class="ct2">북알프스 다테야마<br>알펜루트 완주</div>
+  <div class="csb">도야마 → 무로도 해발 2,450m → 구로베 댐 → 오기자와 · 총 8시간 대장정 · 혼슈 중부 16박17일 6편</div>
+  <div class="pdf-pill">📺 https://youtu.be/puT28kYZqZU · 4월 15일–11월 30일 운영</div>
+</div>
+<div class="ctg">＋</div>
+</div></div>
+<div class="cta-top">
+  <a href="https://www.alpen-route.com/kr/" target="_blank" class="cta-btn cta-pri">🚠 알펜루트 공식 사이트 (한국어 지원)</a>
+  <a href="https://youtu.be/puT28kYZqZU" target="_blank" class="cta-btn cta-sec">📺 유튜브 후기 영상 보기</a>
+</div>
+<div class="cta-note">※ 위 링크는 제휴 링크입니다. 추가 비용 없이 여행 정보 운영에 도움이 됩니다.</div>
+<hr class="cdv">
+<div class="ctr"><div class="tri">
+
+  <!-- 여행 개요 -->
+  <div class="br" id="bat1"><div class="bl2" onclick="togB('bat1')"><div class="bi2 bn2">📋</div><span class="bnm">여행 개요</span><span class="bct">기본 정보</span><span class="ba2">▶</span></div><div class="blv">
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">알펜루트란?</div><div class="lm2">히다 산맥(북알프스) 다테야마를 열차·케이블카·버스·로프웨이 등 6가지 교통수단으로 횡단하는 산악 관광 루트</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">운영 기간</div><div class="lm2">매년 4월 15일 – 11월 30일 · 동절기 완전 폐쇄 · 4–5월(설벽) · 10월(단풍) 성수기</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">주요 거점</div><div class="lm2">도야마역 출발 → 다테야마역 → 무로도(2,450m 정상) → 구로베 댐 → 오기자와 도착</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">💴 전체 패스 요금</div><div class="lm2">성인 1인 10,940엔 (다테야마역–오기자와) + 도야마→다테야마 열차 1,310엔 별도</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">⏱️ 소요 시간</div><div class="lm2">전체 완주 약 8시간 · 이른 아침 출발 필수 · 오기자와 막차 시간 역산해서 일정 계획</div></div></div></div>
+  </div></div>
+
+  <!-- 구간별 이동 -->
+  <div class="br" id="bat2"><div class="bl2" onclick="togB('bat2')"><div class="bi2 bt2">🚠</div><span class="bnm">구간별 이동 수단</span><span class="bct">4단계 완주</span><span class="ba2">▶</span></div><div class="blv">
+    <div class="lf"><a class="ll2" href="https://www.alpen-route.com/kr/" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">1단계 · 도야마 → 다테야마역 (열차 1,310엔)</div><div class="lm2">덴테츠 도야마역 출발 · 약 1시간 · 알펜루트 패스 별도 구매 후 출발</div></div><span class="lb2 lk">공식</span></a></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">2단계 · 다테야마역 → 무로도 (케이블카+고원버스)</div><div class="lm2">비조다이라 케이블카 → 무로도 고원버스 · ⭐ 버스 왼쪽 좌석 → 쇼묘 폭포(일본 최대 낙차 350m) 감상</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">3단계 · 무로도 → 구로베다이라 (트롤리버스+로프웨이)</div><div class="lm2">무로도 → 다이칸보 트롤리버스 → 구로베다이라 로프웨이 · 절벽 위 북알프스 파노라마</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">4단계 · 구로베 댐 → 오기자와 (케이블카+전기버스)</div><div class="lm2">구로베코 케이블카 → 구로베 댐 도보 20분 (비취색 호수+설산) → 오기자와 전기버스</div></div></div></div>
+  </div></div>
+
+  <!-- 핵심 명소 -->
+  <div class="br" id="bat3"><div class="bl2" onclick="togB('bat3')"><div class="bi2 bs">🏔️</div><span class="bnm">핵심 명소</span><span class="bct">놓치면 후회</span><span class="ba2">▶</span></div><div class="blv">
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=쇼묘폭포+다테야마" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">쇼묘 폭포 (称名滝) · 일본 최대 낙차 350m</div><div class="lm2">고원버스 왼쪽 좌석 앉기 · 봄 눈녹이 시기 물량 최대 · 비조다이라 부근 도보 접근 가능</div></div><span class="lb2 lk">지도</span></a></div>
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=무로도+미쿠리가이케+다테야마" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">무로도 · 미쿠리가이케 연못 (해발 2,450m)</div><div class="lm2">화산 분화구 온천 연못 · 반영 절경 · 온천 산장 힐링 · 설원 산책 (봄)</div></div><span class="lb2 lk">지도</span></a></div>
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=구로베댐+알펜루트" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">구로베 댐 · 비취색 호수+설산</div><div class="lm2">댐 상부 도보 약 20분 · 비취색 호수와 설산의 조화 · 6–10월 댐 방류 시즌 장관</div></div><span class="lb2 lk">지도</span></a></div>
+    <div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=다이칸보+전망대+구로베" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">다이칸보 전망대 (해발 2,316m)</div><div class="lm2">알펜루트 최고 파노라마 뷰 포인트 · 구로베 댐+북알프스 전경</div></div><span class="lb2 lk">지도</span></a></div>
+  </div></div>
+
+  <!-- 핵심 팁 -->
+  <div class="br" id="bat4"><div class="bl2" onclick="togB('bat4')"><div class="bi2 bf2">💡</div><span class="bnm">핵심 팁 · 주의사항</span><span class="bct">실전 노하우</span><span class="ba2">▶</span></div><div class="blv">
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">⭐ 버스 왼쪽 좌석 앉기</div><div class="lm2">비조다이라→무로도 고원버스 · 왼쪽 좌석 = 쇼묘 폭포(350m 낙차) 감상 포인트</div></div></div></div>
+    <div class="lf"><a class="ll2" href="https://link.coupang.com/a/izen" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">⚠️ 아이젠 (10–11월 필수 지참)</div><div class="lm2">초겨울 시즌 무로도 구간 눈·빙판 심함 · 미끄럼 사고 위험</div></div><span class="lb2 ln">필수</span></a></div>
+    <div class="lf"><a class="ll2" href="https://link.coupang.com/a/winterjacket" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">방한 의류 (계절 불문 필수)</div><div class="lm2">해발 2,450m · 여름에도 평지보다 10–15°C 낮음 · 바람막이+보온재킷 필수</div></div><span class="lb2 ln">필수</span></a></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">이른 아침 출발 (9시 이전 강력 권장)</div><div class="lm2">전체 완주 8시간 · 오기자와 막차 역산 필수 · 인기 구간 혼잡 회피</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">고산증 주의 (해발 2,450m)</div><div class="lm2">급격한 고도 상승 · 두통·어지러움 발생 시 충분한 휴식 · 무리한 산행 금지</div></div></div></div>
+  </div></div>
+
+  <!-- 예약·연결 -->
+  <div class="br" id="bat5"><div class="bl2" onclick="togB('bat5')"><div class="bi2 bt2">🚉</div><span class="bnm">예약 · 연결 교통</span><span class="bct">오기자와 이후</span><span class="ba2">▶</span></div><div class="blv">
+    <div class="lf"><a class="ll2" href="https://www.alpen-route.com/kr/" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">알펜루트 공식 예약 (한국어 지원)</div><div class="lm2">성수기(4–5월, 10월) 사전 예약 강력 권장 · 전구간 패스 10,940엔</div></div><span class="lb2 lk">한국어</span></a></div>
+    <div class="lf"><a class="ll2" href="https://www.jalan.net" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">도야마 전날 숙박 예약</div><div class="lm2">알펜루트 출발 전날 도야마 숙박 → 이른 아침 출발 준비 · 역 인근 호텔 권장</div></div><span class="lb2 lk">자란넷</span></a></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">무로도 산장 1박 (선택)</div><div class="lm2">무로도 1박 시 일출·별자리 관측 가능 · 성수기 수개월 전 예약 필수</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">오기자와 → 나가노·도쿄 연결</div><div class="lm2">오기자와 → 버스 → 시나노오마치역 → JR 나가노역 → 신칸센 도쿄 (혼슈 중부 여행 연결)</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">📺 16박17일 혼슈 중부 여행 6편</div><div class="lm2">본 가이드는 혼슈 중부 16박17일 여행 6번째 코스 · 유튜브 후기 영상 참고 권장</div></div></div></div>
+  </div></div>
+
+</div></div>
+<div class="cft"><span>🚠 다테야마</span><span>알펜루트 완주</span><span>해발 2,450m</span><span>8시간</span><span>✓ 완료</span></div></div>
+</div>
+
+<!-- ■ 국내 캠핑 -->
+<div class="rev-banner">
+  <div class="rb-card">
+    <div class="rb-icon">📄</div>
+    <div class="rb-body">
+      <div class="rb-ttl">60일 일본 캠핑 루트 PDF</div>
+      <div class="rb-desc">캠핑장·료칸·맛집·교통비 전체 수록<br>직접 다녀온 실전 자료</div>
+      <a href="#" class="rb-cta" onclick="alert('준비 중입니다. 이메일을 구독하시면 출시 시 알려드립니다!')">📍 출시 알림 받기</a>
+    </div>
+  </div>
+  <div class="rb-card">
+    <div class="rb-icon">🛒</div>
+    <div class="rb-body">
+      <div class="rb-ttl">실버 캠핑 추천 장비</div>
+      <div class="rb-desc">60일 여행에서 직접 쓴 장비 모음<br>랜턴·텐트·경량 테이블 외</div>
+      <a href="https://link.coupang.com/a/allgear" target="_blank" class="rb-cta">🛒 쿠팡에서 보기</a>
+    </div>
+  </div>
+  <div class="rb-card">
+    <div class="rb-icon">👥</div>
+    <div class="rb-body">
+      <div class="rb-ttl">실버 캠핑 동행 모집</div>
+      <div class="rb-desc">함께 떠나는 실버 캠핑 여행<br>일본·국내 소규모 동행 모집</div>
+      <a href="mailto:contact@silvercamp.kr" class="rb-cta">✉️ 문의하기</a>
+    </div>
+  </div>
+</div>
+<div class="sec-lbl" style="padding-top:18px;"><h2><em>Domestic Camping Records</em>국내 캠핑 기록</h2><p>성남고 백패킹 동호회 · SN33 산악회 · 커플 섬패킹</p></div>
+<div class="g2">
+
+<div class="tc cm2" id="c2"><div class="ch3" onclick="tog('c2')"><div class="chi"><div class="ci2 im">🌸</div><div class="cm3"><span class="cs2 sd">✓ 완료</span><div class="ct2">몽산포 봄맞이 캠핑</div><div class="csb">성남고 백패킹 동호회 · 1박 2일 · 2026.04.04–05 · 4팀</div></div><div class="ctg">＋</div></div></div><hr class="cdv">
+<div class="ctr"><div class="tri">
+<div class="br" id="b20"><div class="bl2" onclick="togB('b20')"><div class="bi2 bc2">⛺</div><span class="bnm">야영지</span><span class="bct">B08·D14·D15</span><span class="ba2">▶</span></div><div class="blv">
+<div class="lf"><a class="ll2" href="https://reservation.knps.or.kr" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">몽산포 국립 자동차야영장</div><div class="lm2">충남 태안 · 사이트 B08, D14, D15</div></div><span class="lb2 ldo">완료</span></a></div>
+<div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=몽산포+곰솔림탐방길" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">몽산포 곰솔림 탐방길</div><div class="lm2">수령 100년+ 해송 · 왕복 3km · 60–80분</div></div><span class="lb2 lk">지도</span></a></div>
+</div></div>
+<div class="br" id="b21"><div class="bl2" onclick="togB('b21')"><div class="bi2 bn2">📋</div><span class="bnm">인원 편성 4팀</span><span class="bct">9인</span><span class="ba2">▶</span></div><div class="blv">
+<div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">1호차 · 조종환 + 허정호</div><div class="lm2">종환 캠핑장비 → 철수 시 허정호 인수</div></div></div></div>
+<div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">2호차 · 신수호 + 박용순 + 이광휘</div><div class="lm2">공용장비 철수 조장: 박용순</div></div></div></div>
+<div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">3호차 · 이종석 + 도상무 + 인경환</div><div class="lm2">텐트 피칭 현장 보조</div></div></div></div>
+<div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">4호차 · 이재인 + 고수님</div><div class="lm2">공용장비 지참 · 몽지람 백주 후원:안교선</div></div></div></div>
+</div></div>
+<div class="br" id="b22"><div class="bl2" onclick="togB('b22')"><div class="bi2 bs">🏞️</div><span class="bnm">연계 명소</span><span class="bct">2곳</span><span class="ba2">▶</span></div><div class="blv">
+<div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=태안해안국립공원+솔모랫길" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">태안 솔모랫길 4코스</div><div class="lm2">해변길 16km / 4시간 · 몽산포항→드르니항</div></div><span class="lb2 lk">지도</span></a></div>
+<div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=마곡사+공주" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">공주 마곡사 (春麻谷寺)</div><div class="lm2">유네스코 세계유산 · 봄 벚꽃 · 2일차 귀경 경유</div></div><span class="lb2 lk">지도</span></a></div>
+</div></div>
+<div class="br" id="b23"><div class="bl2" onclick="togB('b23')"><div class="bi2 bf2">🦀</div><span class="bnm">태안 맛집</span><span class="bct">인근</span><span class="ba2">▶</span></div><div class="blv">
+<div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=태안+꽃게+대하+구이" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">태안 꽃게 · 대하 구이</div><div class="lm2">봄 꽃게철 · 몽산포 인근 직판장</div></div><span class="lb2 lk">지도</span></a></div>
+<div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=마곡사+태화식당+산채정식" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">마곡사 태화식당 산채정식</div><div class="lm2">2일차 중식 · 마곡사 인근</div></div><span class="lb2 lk">지도</span></a></div>
+</div></div>
+</div></div>
+<div class="cft"><span>🌸 봄맞이</span><span>🌊 태안</span><span>⛺ 1박 2일</span><span>🏕️ 성남고 백패킹</span></div></div>
+
+<div class="tc cw" id="c3"><div class="ch3" onclick="tog('c3')"><div class="chi"><div class="ci2 iw">🏝️</div><div class="cm3"><span class="cs2 sa">● 예정</span><div class="ct2">완도·청산도 섬패킹</div><div class="csb">4박 5일 · 2026.04.30–05.04 · 구계등 베이스캠프 · 청산도 슬로길</div></div><div class="ctg">＋</div></div></div><hr class="cdv">
+<div class="ctr"><div class="tri">
+<div class="br" id="b30"><div class="bl2" onclick="togB('b30')"><div class="bi2 bc2">⛺</div><span class="bnm">야영지 구계등</span><span class="bct">결제완료</span><span class="ba2">▶</span></div><div class="blv">
+<div class="lf"><a class="ll2" href="https://reservation.knps.or.kr" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">구계등야영장 A11 (4/30·5/01)</div><div class="lm2">완도 · 16,000/21,000원 · 몽돌해변 인접</div></div><span class="lb2 ldo">결제완료</span></a></div>
+<div class="lf"><a class="ll2" href="https://reservation.knps.or.kr" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">구계등야영장 A3 (5/03)</div><div class="lm2">완도 · 16,000원 · 마지막 밤 캠프파이어</div></div><span class="lb2 ldo">결제완료</span></a></div>
+<div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=청산도+지리해변" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">청산도 섬패킹 (5/02–03)</div><div class="lm2">슬로길 역방향 탐방 · 지리해변 일몰</div></div><span class="lb2 ln">당일신청</span></a></div>
+</div></div>
+<div class="br" id="b31"><div class="bl2" onclick="togB('b31')"><div class="bi2 bt2">⛴️</div><span class="bnm">청산도 배편</span><span class="bct">6항차</span><span class="ba2">▶</span></div><div class="blv">
+<div class="lf"><a class="ll2" href="https://www.cheongsando.net" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">완도↔청산 운항 (6항차)</div><div class="lm2">소요 50분 · 대인 8,700 / 경로 7,100원 (65세↑)</div></div><span class="lb2 lk">예약</span></a></div>
+<div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">추천: 5/02 토 08:30 출발</div><div class="lm2">완도항 061-552-9385 / 청산농협 061-552-9388</div></div></div></div>
+</div></div>
+<div class="br" id="b32"><div class="bl2" onclick="togB('b32')"><div class="bi2 bs">🌊</div><span class="bnm">연계 명소</span><span class="bct">완도·청산도</span><span class="ba2">▶</span></div><div class="blv">
+<div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=장도+청해진유적+완도" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">장도 청해진 유적 (사적 308호)</div><div class="lm2">장보고 청해진 본영 · 장보고기념관 무료</div></div><span class="lb2 lk">지도</span></a></div>
+<div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=고금도+묘당도+이충무공유적" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">고금도 묘당도 이충무공 유적 (사적 114호)</div><div class="lm2">충무공 수군 본영 · 덕수이씨 후손 성지</div></div><span class="lb2 lk">지도</span></a></div>
+<div class="lf"><a class="ll2" href="https://www.daeheungsa.co.kr" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">해남 대흥사 (유네스코 세계유산)</div><div class="lm2">Day 5 귀경 경유 · 상시 개방</div></div><span class="lb2 lk">공식</span></a></div>
+</div></div>
+<div class="br" id="b33"><div class="bl2" onclick="togB('b33')"><div class="bi2 bf2">🦪</div><span class="bnm">완도·목포 맛집</span><span class="bct">추천</span><span class="ba2">▶</span></div><div class="blv">
+<div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=완도+해궁횟집" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">완도 해궁횟집</div><div class="lm2">전복뚝배기·해물물회 · 완도항 맞은편</div></div><span class="lb2 lk">지도</span></a></div>
+<div class="lf"><a class="ll2" href="https://maps.google.com/maps?q=해남+신창손순대국밥" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">해남 신창손순대국밥</div><div class="lm2">목포→완도 동선 경유</div></div><span class="lb2 lk">지도</span></a></div>
+</div></div>
+<div class="br" id="b34"><div class="bl2" onclick="togB('b34')"><div class="bi2 bt2">🚆</div><span class="bnm">열차+렌터카</span><span class="bct">예약완료</span><span class="ba2">▶</span></div><div class="blv">
+<div class="lf"><a class="ll2" href="https://www.korail.com" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">ITX-새마을 수원 08:12→목포 12:48 (4/30)</div><div class="lm2">가는 편</div></div><span class="lb2 ldo">예약</span></a></div>
+<div class="lf"><a class="ll2" href="https://www.korail.com" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">ITX-마음 목포 15:57→수원 19:55 (5/04)</div><div class="lm2">오는 편 · 렌터카 반납 14:00 목표</div></div><span class="lb2 ldo">예약</span></a></div>
+</div></div>
+</div></div>
+<div class="cft"><span>🏝️ 완도·청산도</span><span>⛺ 4박 5일</span><span>🚆 열차+렌터카</span><span>🌿 슬로시티</span></div></div>
+</div>
+
+<!-- ■ 해외 트레킹 참고자료 -->
+<div class="sec-lbl" style="padding-top:18px;"><h2><em>Overseas Trekking · 참고 자료</em>해외 원정 트레킹 기록</h2><p>다녀온 해외 트레킹·원정 정보 참고 아카이브</p></div>
+<div class="g3">
+
+<div class="tc cus" id="c4"><div class="ch3" onclick="tog('c4')"><div class="chi"><div class="ci2 ius">🇺🇸</div><div class="cm3"><span class="cs2 sd">✓ 완료된 여행</span><div class="ct2">미서부 Yellowstone/<br>Utah 로드트립 캠핑</div><div class="csb">33 동창 12인 · 21일 · 2025.09.25–10.15 · 총 3,665마일(5,900km) · 12인승 밴 운행</div>
+<div class="pdf-pill">📸 네이버 밴드에 사진·영상 보관 중 · America the Beautiful Pass $80 추천</div>
+</div><div class="ctg">＋</div></div></div>
+<div class="cta-top">
+  <a href="https://www.recreation.gov" target="_blank" class="cta-btn cta-pri">🏕️ Recreation.gov 캠핑장 예약</a>
+  <a href="https://link.coupang.com/a/us-camping" target="_blank" class="cta-btn cta-sec">🛒 미국 캠핑 장비 보기 <span class="rev-badge">쿠팡</span></a>
+</div>
+<div class="cta-note">※ 위 링크는 제휴 링크입니다. 추가 비용 없이 여행 정보 운영에 도움이 됩니다.</div>
+<hr class="cdv">
+<div class="ctr"><div class="tri">
+
+  <!-- 전체 루트 -->
+  <div class="br" id="b40"><div class="bl2" onclick="togB('b40')"><div class="bi2 bn2">🗺️</div><span class="bnm">전체 루트 · 21일 일정</span><span class="bct">3,665마일</span><span class="ba2">▶</span></div><div class="blv">
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">A → B → C → D → E → F → G → H → I → A</div><div class="lm2">Alameda(CA) → Winnemucca(NV) → Twin Falls(ID) → Yellowstone(WY) → Rock Springs(WY) → Glenwood Springs(CO) → Moab(UT) → Ely(NV) → Reno/Lake Tahoe(NV) → Alameda</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">9/25–26 · Alameda 베이스캠프 도착·보급</div><div class="lm2">ICN 9/24 20:55 출발 → Alameda 15:30 도착 · 베이스캠프: 811 Harbor Rd, Alameda CA (Man Sung Park)</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">9/27 · Alameda → Winnemucca (383마일 · 5h34m)</div><div class="lm2">I-80 · KOA Camping, NV</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">9/28 · Winnemucca → Twin Falls (288마일 · 4h4m)</div><div class="lm2">I-80, US-93 · Twin Falls, ID</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">9/29–10/1 · Twin Falls → Yellowstone (306마일 · 5h7m)</div><div class="lm2">US-93, I-86, I-15, US-20 · 3박 4일 Yellowstone NP 정복</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">10/2 · Yellowstone → Rock Springs (234마일 · 4h5m)</div><div class="lm2">US-191 · Flaming Gorge 경유</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">10/3–5 · Rock Springs → Glenwood Springs (273마일)</div><div class="lm2">Grand Lake → 록키 마운틴 → Black Hawk 호텔 2박 → Independence Pass → Aspen → Glenwood Springs 온천</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">10/6–7 · Glenwood → Moab → Arches NP (198마일 · 2h48m)</div><div class="lm2">I-70 · Devils Garden 캠핑 · Arches NP · Canyonlands · Delicate Arch</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">10/8–9 · Moab → Ely → Reno (381+320마일)</div><div class="lm2">Ward Mountain 캠핑(Great Basin NP 근처) → Tahoe State Park 캠핑</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">10/10–14 · Reno → Alameda · SF 관광</div><div class="lm2">I-80(218마일) · 베이스캠프 휴식 · Lake Tahoe · Yosemite · LA Option</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">10/15–16 · 귀국</div><div class="lm2">SFO 10/14 23:30 출발 → ICN 10/16 04:30 도착 · 아시아나</div></div></div></div>
+  </div></div>
+
+  <!-- 캠핑장 -->
+  <div class="br" id="b41"><div class="bl2" onclick="togB('b41')"><div class="bi2 bc2">⛺</div><span class="bnm">구간별 캠핑장</span><span class="bct">전 구간</span><span class="ba2">▶</span></div><div class="blv">
+    <div class="lf"><a class="ll2" href="https://koa.com" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">Winnemucca KOA / Silver State RV Park (9/27)</div><div class="lm2">5575 E Winnemucca Blvd, NV · 텐트 $26+ · RV 풀훅업 $40+ · 세탁·수영장·도그파크 완비</div></div><span class="lb2 lk">KOA</span></a></div>
+    <div class="lf"><a class="ll2" href="https://www.recreation.gov" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">Twin Falls, ID · KOA or Snake River (9/28)</div><div class="lm2">Recreation.gov 예약 · Snake River Canyon 인근</div></div><span class="lb2 lk">예약</span></a></div>
+    <div class="lf"><a class="ll2" href="https://www.yellowstonenationalparklodges.com" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">Yellowstone · Madison / Canyon Campground (9/29–10/1)</div><div class="lm2">국립공원 내 4개 캠핑장 · Old Faithful 인접 · 307-344-7311</div></div><span class="lb2 lk">공식</span></a></div>
+    <div class="lf"><a class="ll2" href="https://www.recreation.gov" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">Moab · Devils Garden (Arches NP) (10/6–7)</div><div class="lm2">Arches NP 캠핑장 · recreation.gov · 성수기 사전 예약 필수</div></div><span class="lb2 lk">예약</span></a></div>
+    <div class="lf"><a class="ll2" href="https://www.recreation.gov" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">Ely, NV · Ward Mountain Campground (10/8)</div><div class="lm2">Great Basin NP 근처 · US-50 경유 381마일</div></div><span class="lb2 lk">예약</span></a></div>
+    <div class="lf"><a class="ll2" href="https://www.recreation.gov" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">Reno / Tahoe · Tahoe State Park (10/9)</div><div class="lm2">Lake Tahoe 경관 드라이브 2–3시간 연계</div></div><span class="lb2 lk">예약</span></a></div>
+  </div></div>
+
+  <!-- 국립공원 -->
+  <div class="br" id="b42"><div class="bl2" onclick="togB('b42')"><div class="bi2 bs">🏞️</div><span class="bnm">핵심 국립공원</span><span class="bct">6개소</span><span class="ba2">▶</span></div><div class="blv">
+    <div class="lf"><a class="ll2" href="https://www.nps.gov/yell" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">Yellowstone NP · 3박 4일 정복</div><div class="lm2">Old Faithful 간헐천 · Grand Prismatic Spring · Grand Canyon of Yellowstone · 입장 $35/차량</div></div><span class="lb2 lk">NPS</span></a></div>
+    <div class="lf"><a class="ll2" href="https://www.nps.gov/arch" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">Arches NP · Delicate Arch</div><div class="lm2">Moab, UT · Devils Garden · Canyonlands 연계 · 입장 $30/차량</div></div><span class="lb2 lk">NPS</span></a></div>
+    <div class="lf"><a class="ll2" href="https://www.nps.gov/romo" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">Rocky Mountain NP · Grand Lake 경유</div><div class="lm2">10/3 · Grand Lake 점심 → 록키 마운틴 진입 → Independence Pass → Aspen</div></div><span class="lb2 lk">NPS</span></a></div>
+    <div class="lf"><a class="ll2" href="https://www.nps.gov/grba" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">Great Basin NP · Ely, NV 근처</div><div class="lm2">US-50 "미국에서 가장 외로운 도로" 경유 · Ward Mountain 캠핑 연계</div></div><span class="lb2 lk">NPS</span></a></div>
+    <div class="lf"><a class="ll2" href="https://www.nps.gov/flgo" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">Flaming Gorge · Rock Springs 인근</div><div class="lm2">Scenic Drive 2–3시간 · Rock Springs → Glenwood 이동 중 경유</div></div><span class="lb2 lk">NPS</span></a></div>
+  </div></div>
+
+  <!-- 역할 분담 -->
+  <div class="br" id="b43"><div class="bl2" onclick="togB('b43')"><div class="bi2 bn2">👥</div><span class="bnm">역할 분담 · 12인 팀</span><span class="bct">33 동창</span><span class="ba2">▶</span></div><div class="blv">
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">교대 운전 · 내비 지원</div><div class="lm2">만성·학선·재봉 / 일 400km 이상 시 2시간마다 교대</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">일정 허가 · 협의</div><div class="lm2">만성·재봉</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">식량 조달 · 장보기 · 설거지</div><div class="lm2">동현·경환·종익 / 보급처: Costco(Alameda·SLC) · Walmart(Moab·Reno) · City Market(Moab)</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">캠프 셋업 · 텐트·장비 설치</div><div class="lm2">재인·권대감</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">📸 촬영 / ✍️ 기록·기행문</div><div class="lm2">촬영: 재인·학선 / 기록: 학선·승기·권대감 → 사진·영상 네이버 밴드 보관</div></div></div></div>
+  </div></div>
+
+  <!-- 준비·비용 -->
+  <div class="br" id="b44"><div class="bl2" onclick="togB('b44')"><div class="bi2 bf2">💰</div><span class="bnm">비용 · 준비물</span><span class="bct">실전 정보</span><span class="ba2">▶</span></div><div class="blv">
+    <div class="lf"><a class="ll2" href="https://www.recreation.gov/pass/americathebeautiful" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">America the Beautiful 연간패스 $80 (강력 추천)</div><div class="lm2">Yellowstone·Arches·Rocky Mountain 등 대부분 국립공원 무료 입장 · 차량당 적용</div></div><span class="lb2 lk">구매</span></a></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">여행 경비 예상</div><div class="lm2">1인당 약 $200/일 (밴 렌트·KOA·에어비앤비·호텔·가스·식사 포함) · 21일 = 약 $4,200</div></div></div></div>
+    <div class="lf"><a class="ll2" href="https://link.coupang.com/a/bear-spray" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">곰 스프레이 · 식량 보관함 (Yellowstone 필수)</div><div class="lm2">옐로스톤 국립공원 캠핑 시 곰 방지 보관함·스프레이 의무</div></div><span class="lb2 ln">필수</span></a></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">날씨 (9–10월 고지대)</div><div class="lm2">낮 18–28°C · 밤 고지대 0–5°C · 침낭·패딩·우비·히트텍·장갑 필수</div></div></div></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">통신 · 내비</div><div class="lm2">eSIM / T-Mobile 무제한 · Google Maps 오프라인 + MAPS.ME · 위성 SOS 기기(InReach)</div></div></div></div>
+  </div></div>
+
+  <!-- Glenwood 호텔 -->
+  <div class="br" id="b45"><div class="bl2" onclick="togB('b45')"><div class="bi2 bh">🏨</div><span class="bnm">숙박 (일부 호텔)</span><span class="bct">예약 완료</span><span class="ba2">▶</span></div><div class="blv">
+    <div class="lf"><a class="ll2" href="https://www.marriott.com" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">Residence Inn Glenwood Springs (10/5–6)</div><div class="lm2">125 Wulfsohn Rd, Glenwood Springs, CO · 확인번호 89541711 / 89539394 · $293/1박 · 2룸</div></div><span class="lb2 ldo">예약 완료</span></a></div>
+    <div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">Black Hawk, CO 호텔 2박 (10/3–4)</div><div class="lm2">록키 마운틴 관광 베이스 · Red Rock Amphitheater · H-Mart 장보기</div></div></div></div>
+  </div></div>
+
+</div></div>
+<div class="cft"><span>🇺🇸 미서부</span><span>21일 로드트립</span><span>33 동창 12인</span><span>3,665마일</span><span>✓ 완료</span></div></div>
+
+<div class="tc cme" id="c6"><div class="ch3" onclick="tog('c6')"><div class="chi"><div class="ci2 ime">🏔️</div><div class="cm3"><span class="cs2 sr">📁 참고자료</span><div class="ct2">메리설산 트레킹<br>(중국 윈난성)</div><div class="csb">쿤밍→리장→호도협→메리설산 · 빙후·선후·니농 코스</div></div><div class="ctg">＋</div></div></div><hr class="cdv">
+<div class="ctr"><div class="tri">
+<div class="br" id="b60"><div class="bl2" onclick="togB('b60')"><div class="bi2 bn2">🗓️</div><span class="bnm">10일 일정</span><span class="bct">04/09–18</span><span class="ba2">▶</span></div><div class="blv">
+<div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">04/09 인천→베이징→쿤밍 (환승)</div><div class="lm2">악성국제대반점 숙박</div></div></div></div>
+<div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">04/10 쿤밍→리장 (6시간 차량)</div><div class="lm2">리장고성 카이첸호텔</div></div></div></div>
+<div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">04/11–12 리장→호도협→나시적잔→차마적잔 트레킹</div><div class="lm2">茶馬客栈 숙박</div></div></div></div>
+<div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">04/13–14 시망온천→상위뱀(SUV)→빙후 7h·신의폭포 4h</div><div class="lm2">德钦雨崩假日客栈 숙박</div></div></div></div>
+<div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">04/15 니농 트레킹 4h → 리장 복귀 (6h)</div><div class="lm2">04/17 리장→쿤밍 / 04/18 귀국</div></div></div></div>
+</div></div>
+<div class="br" id="b61"><div class="bl2" onclick="togB('b61')"><div class="bi2 bs">⛰️</div><span class="bnm">트레킹 코스</span><span class="bct">3개</span><span class="ba2">▶</span></div><div class="blv">
+<div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">빙후(冰湖) 트레킹 · 편도 7시간</div><div class="lm2">위뱅촌→빙후 · 최고 난이도</div></div><span class="lb2 lr">참고</span></div></div>
+<div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">신의 폭포(神瀑·선후) 트레킹 · 편도 4시간</div><div class="lm2">위뱅촌→선후 · 성수 폭포</div></div><span class="lb2 lr">참고</span></div></div>
+<div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">니농(尼农) 트레킹 · 4시간</div><div class="lm2">절벽 협곡 코스</div></div><span class="lb2 lr">참고</span></div></div>
+<div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">⚠️ 선후·11시간 코스 접근 불가 (위험)</div><div class="lm2">지도 빨간X 표시 구간</div></div></div></div>
+</div></div>
+</div></div>
+<div class="cft"><span>🇨🇳 윈난성</span><span>10일</span><span>메리설산</span><span>호도협</span><span>📁 참고</span></div></div>
+
+<div class="tc ck" id="c7"><div class="ch3" onclick="tog('c7')"><div class="chi"><div class="ci2 ik">⛰️</div><div class="cm3"><span class="cs2 sr">📁 참고자료</span><div class="ct2">카일라스 수미산<br>코라 + 티베트 16일</div><div class="csb">라싸→마나사로바→카일라스 코라→구게왕국 · 53km</div></div><div class="ctg">＋</div></div></div><hr class="cdv">
+<div class="ctr"><div class="tri">
+<div class="br" id="b70"><div class="bl2" onclick="togB('b70')"><div class="bi2 bn2">🗓️</div><span class="bnm">16일 일정</span><span class="bct">주요 구간</span><span class="ba2">▶</span></div><div class="blv">
+<div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">1–2일 인천→서안(KE811)→라싸 · 고도 3,650m 적응</div><div class="lm2">포탈라궁·조강사원·바코르광장</div></div></div></div>
+<div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">3일 암드록초 호수 4,445m · 카뤄라 빙하 · 백거사</div><div class="lm2">시가체 이동</div></div></div></div>
+<div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">5일 마나사로바 호수 일출 · 카일라스 조망 · 다르첸</div><div class="lm2">치우곰파·랑보나사원 탐방</div></div></div></div>
+<div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">7–9일 카일라스 코라 53km (3일 트레킹)</div><div class="lm2">돌말라 패스 5,630m 통과</div></div></div></div>
+<div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">10일 구게왕국 (자다) · 12일 타쉬룬포사원</div><div class="lm2">14일 남초호수 → 라싸 · 15–16일 귀국(KE812)</div></div></div></div>
+</div></div>
+<div class="br" id="b71"><div class="bl2" onclick="togB('b71')"><div class="bi2 bs">⛩️</div><span class="bnm">주요 성지·명소</span><span class="bct">티베트</span><span class="ba2">▶</span></div><div class="blv">
+<div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">포탈라궁 (布達拉宮)</div><div class="lm2">라싸 · 달라이라마 궁전</div></div><span class="lb2 lr">참고</span></div></div>
+<div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">카일라스(수미산) 코라 53km · 5,630m</div><div class="lm2">힌두·불교·자이나교 성산 · 3일 코스</div></div><span class="lb2 lr">참고</span></div></div>
+<div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">마나사로바 성호 4,588m · 구게왕국 · 남초호수</div><div class="lm2">세계 최고 민물호수 · 고대 티베트 왕국 유적</div></div><span class="lb2 lr">참고</span></div></div>
+</div></div>
+<div class="br" id="b72"><div class="bl2" onclick="togB('b72')"><div class="bi2 bn2">💡</div><span class="bnm">여행 정보</span><span class="bct">팁</span><span class="ba2">▶</span></div><div class="blv">
+<div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">최소 8인 출발 · 1인 430만원 (항공·숙박·가이드 포함)</div><div class="lm2">6/4–19일 한국-서안 대한항공, 서안-라싸 국내선</div></div></div></div>
+<div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">코라: 1일차 12km · 2일차 18km · 3일차 3–4h</div><div class="lm2">고산증 대비 · 겨울용 침낭·핫팩 필지참</div></div></div></div>
+</div></div>
+</div></div>
+<div class="cft"><span>🏔️ 티베트</span><span>16일</span><span>5,630m</span><span>카일라스 코라</span><span>📁 참고</span></div></div>
+
+<div class="tc can" id="c8"><div class="ch3" onclick="tog('c8')"><div class="chi"><div class="ci2 ia">🦅</div><div class="cm3"><span class="cs2 sr">📁 참고자료</span><div class="ct2">안나푸르나 트레킹<br>(푼힐 ABC 코스)</div><div class="csb">네팔 포카라 · 푼힐 3,210m · ABC 4,130m · 안나푸르나(8,091m)</div></div><div class="ctg">＋</div></div></div><hr class="cdv">
+<div class="ctr"><div class="tri">
+<div class="br" id="b80"><div class="bl2" onclick="togB('b80')"><div class="bi2 bs">🗺️</div><span class="bnm">트레킹 루트 (ABC)</span><span class="bct">전 코스</span><span class="ba2">▶</span></div><div class="blv">
+<div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">나야풀(1,070m)→비레탄티→티케동가(1,540m)</div><div class="lm2">출발 · 트레킹 1일차</div></div></div></div>
+<div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">울레리→반탄티→낭게탄티→고라파니(2,860m)</div><div class="lm2">→ 푼힐전망대(3,210m) 일출 조망</div></div></div></div>
+<div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">타다파니→쉰레→그루중→촘동(2,170m)</div><div class="lm2">트레킹 2일차</div></div></div></div>
+<div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">아랫시누와→히말라야롯지→데우랄리(3,200m)</div><div class="lm2">→ MBC(3,700m) → ABC(4,130m)</div></div></div></div>
+</div></div>
+<div class="br" id="b81"><div class="bl2" onclick="togB('b81')"><div class="bi2 bn2">⛰️</div><span class="bnm">주요 전망지</span><span class="bct">8,000m급</span><span class="ba2">▶</span></div><div class="blv">
+<div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">푼힐 전망대 (3,210m)</div><div class="lm2">다울라기리(8,167m) · 안나푸르나 연봉 일출</div></div><span class="lb2 lr">참고</span></div></div>
+<div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">ABC 안나푸르나 베이스캠프 (4,130m)</div><div class="lm2">안나푸르나봉(8,091m) · 마차푸차레(6,993m) 정면</div></div><span class="lb2 lr">참고</span></div></div>
+</div></div>
+<div class="br" id="b82"><div class="bl2" onclick="togB('b82')"><div class="bi2 bn2">💡</div><span class="bnm">트레킹 정보</span><span class="bct">준비</span><span class="ba2">▶</span></div><div class="blv">
+<div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">출발: 포카라 · TIMS 카드 + ACAP 입장료 필수</div><div class="lm2">10–11월 · 3–4월이 최적 시즌</div></div></div></div>
+<div class="lf"><div class="ll2"><div class="ld2"></div><div class="lc2"><div class="lt2">4,130m 고도 적응 · 고산증 약 지참</div><div class="lm2">2박 롯지 (ABC·고라파니)</div></div></div></div>
+</div></div>
+</div></div>
+<div class="cft"><span>🇳🇵 네팔</span><span>안나푸르나</span><span>ABC 4,130m</span><span>푼힐</span><span>📁 참고</span></div></div>
+
+<div class="tc cf" id="c9"><div class="ch3" onclick="tog('c9')"><div class="chi"><div class="ci2 if">🧭</div><div class="cm3"><span class="cs2 sp">📌 기획 중</span><div class="ct2">향후 계획하는<br>캠핑 여행</div><div class="csb">오키나와 · 야쿠시마 · 시코쿠 순례 · 규슈 올레</div></div><div class="ctg">＋</div></div></div><hr class="cdv">
+<div class="ctr"><div class="tri">
+<div class="br" id="b90"><div class="bl2" onclick="togB('b90')"><div class="bi2 bc2">⛺</div><span class="bnm">후보 야영지</span><span class="bct">검토 중</span><span class="ba2">▶</span></div><div class="blv">
+<div class="lf"><a class="ll2" href="https://www.nap-camp.com" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">오키나와 오토캠프</div><div class="lm2">아열대 섬 캠핑 · 겨울 피한 남방</div></div><span class="lb2 lp">검토</span></a></div>
+<div class="lf"><a class="ll2" href="https://www.nap-camp.com" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">시코쿠 88개소 순례 연계 캠핑</div><div class="lm2">사찰 순례길 + 야영 장기 루트</div></div><span class="lb2 lp">검토</span></a></div>
+</div></div>
+<div class="br" id="b91"><div class="bl2" onclick="togB('b91')"><div class="bi2 bs">🌺</div><span class="bnm">위시리스트</span><span class="bct">가고 싶은 곳</span><span class="ba2">▶</span></div><div class="blv">
+<div class="lf"><a class="ll2" href="https://www.japan.travel/ko" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">야쿠시마 삼나무 원시림</div><div class="lm2">세계자연유산 · 조몬스기 트레킹</div></div><span class="lb2 lp">위시</span></a></div>
+<div class="lf"><a class="ll2" href="https://www.japan.travel/ko" target="_blank"><div class="ld2"></div><div class="lc2"><div class="lt2">이리오모테섬 정글 카누</div><div class="lm2">오키나와 · 아열대 원시 정글</div></div><span class="lb2 lp">위시</span></a></div>
+</div></div>
+</div></div>
+<div class="cft"><span>📌 기획 중</span><span>🌺 오키나와</span><span>🌲 야쿠시마</span></div></div>
+
+</div>
+
+<div class="qbar"><div class="qbi">
+<a class="qb" href="https://www.nap-camp.com" target="_blank"><div class="qi2">⛺</div><div class="ql2">캠핑 예약<br>なっぷ</div></a>
+<a class="qb" href="https://www.jalan.net" target="_blank"><div class="qi2">♨️</div><div class="ql2">료칸·호텔<br>자란넷</div></a>
+<a class="qb" href="https://travel.rakuten.co.jp" target="_blank"><div class="qi2">🏨</div><div class="ql2">일본 호텔<br>라쿠텐</div></a>
+<a class="qb" href="https://reservation.knps.or.kr" target="_blank"><div class="qi2">🏕️</div><div class="ql2">국립공원<br>예약</div></a>
+<a class="qb qb-hot" href="https://link.coupang.com/a/allgear" target="_blank"><div class="qi2">🛒</div><div class="ql2">캠핑 장비<br>쿠팡</div></a>
+<a class="qb qb-hot" href="https://www.timescar-rental.com" target="_blank"><div class="qi2">🚗</div><div class="ql2">렌터카<br>Times</div></a>
+<a class="qb" href="https://www.japan.travel/ko" target="_blank"><div class="qi2">🗾</div><div class="ql2">Visit Japan<br>한국어</div></a>
+<a class="qb qb-hot" href="#" onclick="alert('준비 중입니다. 이메일을 구독하시면 출시 시 알려드립니다!')"><div class="qi2">📄</div><div class="ql2">루트 PDF<br>준비 중</div></a>
+</div></div>
+
+<div class="subscribe-sec">
+  <div class="sub-ttl">✉️ 실버 캠핑 여행 정보 무료 구독</div>
+  <p class="sub-desc">다음 여행 계획부터 장비 리뷰, 캠핑장 정보까지<br>직접 경험한 정보를 이메일로 받아보세요</p>
+  <div class="sub-perks">
+    <span class="sub-perk">여행 루트 PDF 우선 발송</span>
+    <span class="sub-perk">캠핑장 특가 정보</span>
+    <span class="sub-perk">장비 추천 리스트</span>
+  </div>
+  <form class="sub-form" onsubmit="handleSubscribe(event)">
+    <input class="sub-input" type="email" id="sub-email" placeholder="이메일 주소를 입력하세요" required>
+    <button class="sub-btn" type="submit">무료 구독하기 →</button>
+  </form>
+  <p class="sub-note">스팸 없음 · 언제든 구독 취소 가능 · 개인정보 보호</p>
+</div>
+
+<footer>
+<div class="flo">🗾 실버의 캠핑여행</div>
+<p>국내 캠핑부터 히말라야·티베트까지 — 실버 세대가 직접 기획한 여행의 모든 기록<br>야영지·호텔·명소·맛집·교통 정보를 트리 형식으로 정리합니다</p>
+<hr class="fhr">
+<div class="flk">
+<a href="https://japancamp-pbpk7d8l.manus.space/" target="_blank">60일 일본 상세 사이트</a>
+<a href="https://www.nap-camp.com" target="_blank">なっぷ 캠핑 예약</a>
+<a href="https://reservation.knps.or.kr" target="_blank">국립공원 예약</a>
+<a href="https://www.jalan.net" target="_blank">자란넷 료칸</a>
+<a href="https://youtu.be/C6CC9_vVrKM" target="_blank">유튜브 원본 영상</a>
+</div>
+<p style="margin-top:12px;font-size:.62rem;color:rgba(255,255,255,.22);">© 2026 실버의 캠핑여행 · Designed with Claude Sonnet</p>
+</footer>
+
+<script>
+function tog(id){const el=document.getElementById(id);const o=el.classList.contains('open');document.querySelectorAll('.tc').forEach(c=>c.classList.remove('open'));if(!o){el.classList.add('open');el.querySelectorAll('.br').forEach(b=>b.classList.add('open'));}}
+function togB(id){/* 브랜치는 항상 열려있음 */}
+window.addEventListener('DOMContentLoaded',()=>{setTimeout(()=>{const el=document.getElementById('c0');el.classList.add('open');el.querySelectorAll('.br').forEach(b=>b.classList.add('open'));},300);});
+
+// 이메일 구독 처리
+function handleSubscribe(e){
+  e.preventDefault();
+  const email = document.getElementById('sub-email').value;
+  // TODO: 실제 연동 시 Mailchimp / Stibee API 연결
+  // fetch('https://your-mailchimp-endpoint', { method:'POST', body: JSON.stringify({email}) })
+  alert('✅ 구독 신청 완료!\n\n' + email + '\n\n여행 루트 PDF 출시 시 가장 먼저 알려드리겠습니다 🗾');
+  document.getElementById('sub-email').value = '';
+}
+
+/*
+══════════════════════════════════════
+💰 제휴 링크 교체 가이드
+══════════════════════════════════════
+현재 href="#" 또는 임시 링크 → 아래 실제 링크로 교체하세요
+
+[ 쿠팡 파트너스 ]
+1. partners.coupang.com 접속 → 가입
+2. 상품 검색 → '링크 생성' 클릭
+3. 생성된 https://coupa.ng/xxxxxxx 를 href에 삽입
+
+교체 위치:
+- href="https://link.coupang.com/a/allgear"  ← 전체 캠핑 장비 링크
+- href="https://link.coupang.com/a/lantern"  ← 랜턴 개별 링크
+- href="https://link.coupang.com/a/tent"     ← 텐트 개별 링크
+
+[ 라쿠텐 트래블 제휴 ]
+1. affiliate.rakuten.co.jp 접속 → 가입
+2. 숙소 검색 → 어필리에이트 링크 생성
+3. 생성된 https://hb.afl.rakuten.co.jp/xxxx 를 href에 삽입
+
+[ 이메일 구독 ]
+- Stibee (한국): stibee.com → 무료 플랜으로 시작
+- Mailchimp (글로벌): mailchimp.com
+- API 연동 후 handleSubscribe() 함수 내 fetch 코드 활성화
+
+[ PDF 판매 ]
+- 크몽 디지털 상품 등록 후 링크 교체
+- 또는 Gumroad(gumroad.com) 활용
+══════════════════════════════════════
+*/
+</script>
+</body>
+</html>
